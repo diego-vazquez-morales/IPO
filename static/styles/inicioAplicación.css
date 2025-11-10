@@ -1,5 +1,26 @@
 /* inicioAplicación.css - estilos para inicioAplicación.html */
-body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:#f5f7fb;margin:0;color:#222}
-.container{max-width:1200px;margin:20px auto;padding:18px}
-.header{display:flex;justify-content:space-between;align-items:center}
-.card{background:#fff;padding:14px;border-radius:8px;border:1px solid #eee}
+body {
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    background: #f5f7fb;
+    margin: 0;
+    color: #222
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 18px
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.card {
+    background: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #eee
+}
