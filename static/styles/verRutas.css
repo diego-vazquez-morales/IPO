@@ -1,0 +1,6 @@
+/* verRutas.css - estilos para verRutas.html */
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:#ffffff;margin:0;color:#222}
+.container{max-width:1100px;margin:20px auto;padding:16px}
+.route-list{display:flex;flex-direction:column;gap:10px}
+.route-item{padding:10px;border:1px solid #eee;border-radius:6px}
+#user-select{padding:6px;border:1px solid #ddd;border-radius:4px}
