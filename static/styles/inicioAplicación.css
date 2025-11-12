@@ -1,26 +1,25 @@
-/* inicioAplicación.css - estilos para inicioAplicación.html */
+html,
 body {
-    font-family: Segoe UI, Roboto, Arial, sans-serif;
-    background: #f5f7fb;
+    height: 100%;
     margin: 0;
-    color: #222
 }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 18px
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    --main-dark-blue: #0A192F;
+    --primary-accent: #3b82f6;
+    --primary-accent-hover: #2563eb;
+    --text-light: #e2e8f0;
+    --text-secondary: #94a3b8;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center
+.bg-image-container {
+    background-image:  url('../static/img/tren_pantalla_inicio.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.card {
-    background: #fff;
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #eee
+.overlay {
+    background-color: rgba(10, 25, 47, 0.7);
 }
