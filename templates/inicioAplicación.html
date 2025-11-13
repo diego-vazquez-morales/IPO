@@ -1,76 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html class="dark" lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>TrainLife - Tu Viaje Comienza Aquí</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="static/styles/inicioAplicación.css" />
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>TrainLife - Tu viaje comienza aquí</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../static/styles/inicioAplicación.css"/>
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      --main-dark-blue: #0A192F;
-      --primary-accent: #3b82f6;
-      --primary-accent-hover: #2563eb;
-      --text-light: #e2e8f0;
-      --text-secondary: #94a3b8;
-    }
-
-    .bg-image-container {
-      background-image: url('../static/img/tren_pantalla_inicio.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .overlay {
-      background-color: rgba(10, 25, 47, 0.7);
-    }
-  </style>
 </head>
-
-<body class="bg-[var(--main-dark-blue)] text-[var(--text-light)]">
-  <div class="relative flex min-h-screen w-full flex-col bg-image-container">
-    <div class="absolute inset-0 overlay z-0"></div>
-    <header class="relative z-10 p-4 sm:p-6 lg:p-8">
-      <nav aria-label="Navegación principal" class="flex items-center justify-between">
-        <a aria-label="Página de inicio de TrainLine" class="flex items-center gap-2" href="#">
-          <span class="material-symbols-outlined text-3xl text-white">train</span>
-          <span class="text-xl font-bold text-white">TrainLife</span>
-        </a>
-      </nav>
-    </header>
-    <main class="relative z-10 flex flex-grow flex-col items-center justify-center text-center p-4">
-      <div class="max-w-2xl">
-        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">Tu viaje comienza aquí
-        </h1>
-        <p class="mt-4 text-lg text-[var(--text-secondary)] sm:mt-6 sm:text-xl">Encuentra horarios de trenes, reserva
-          billetes y gestiona todos tus viajes en un solo lugar.</p>
-        <div class="mt-8 sm:mt-10">
-          <a class="inline-flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg bg-[var(--primary-accent)] px-8 py-3 text-base font-bold text-white shadow-lg transition-colors hover:bg-[var(--primary-accent-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-accent)]"
-            href="./loginUsuario.html">
-            Iniciar Sesión
-          </a>
+<body class="page-body">
+    <div class="main-root">
+        <div class="hero-section" data-alt="High-speed train on a modern railway track with a dark blue overlay">
+            <header class="page-header">
+                <div class="logo-container">
+                    <div class="logo-icon-wrap">
+                        <span class="material-symbols-outlined logo-icon">train</span>
+                        <div class="logo-line"></div>
+                    </div>
+                    <span class="logo-text">TrainLife</span>
+                </div>
+            </header>
+            <main class="page-main">
+                <div class="hero-content">
+                    <h1 class="hero-title">Tu viaje comienza aquí</h1>
+                    <h2 class="hero-subtitle">Consulta horarios en tiempo real y gestiona tus billetes de alta velocidad de forma eficiente y segura.</h2>
+                </div>
+                <button class="primary-button">
+                    <a class="truncate-text" href="./loginUsuario.html">Iniciar sesión</a>
+                </button>
+            </main>
         </div>
-      </div>
-    </main>
-    <footer class="relative z-10 p-4 text-center">
-      <p class="text-sm text-[var(--text-secondary)]">© 2024 TrainLife. Todos los derechos reservados.</p>
-    </footer>
-  </div>
-
-</body>
-
+    </div>
+    
+    </body>
 </html>
