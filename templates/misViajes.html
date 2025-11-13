@@ -1,130 +1,151 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
-<head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Mis Viajes - Gestión de Billetes</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <script src="tailwind-config.js"></script>
-  <link rel="stylesheet" href="styles.css">
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mis Viajes - Gestión de Billetes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0D47A1", // Navy blue base
+            "primary-light": "#1976D2",
+            "background-light": "#F8F9FA",
+            "background-dark": "#121212",
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#1E1E1E",
+            "text-light": "#212529",
+            "text-dark": "#E0E0E0",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+</script>
+<link href="/static/styles/misViajes.css" rel="stylesheet"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
-  <div class="relative flex h-auto min-h-screen w-full flex-row">
-    <aside class="flex h-screen min-h-[700px] w-64 flex-col justify-between border-r border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-4 sticky top-0">
-      <div class="flex flex-col gap-4">
-        <div class="flex items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <div class="flex items-center justify-center size-10 rounded-full bg-primary text-white">
-              <span class="material-symbols-outlined">train</span>
-            </div>
-            <h1 class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-normal">TrainLife</h1>
-          </div>
-          <button class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span class="material-symbols-outlined">menu</span>
-          </button> 
-        </div> 
-        <nav class="flex flex-col gap-2 mt-4">
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
-            <span class="material-symbols-outlined">home</span>
-            <p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Inicio</p>
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-light" href="#">
-            <span class="material-symbols-outlined">confirmation_number</span>
-            <p class="text-sm font-medium leading-normal">Mis Viajes</p>
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
-            <span class="material-symbols-outlined">route</span>
-            <p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Rutas</p>
-          </a>
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
-            <span class="material-symbols-outlined">notifications</span>
-            <p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Avisos</p>
-          </a>
-        </nav>
-      </div>
-      <div class="flex flex-col gap-1">
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
-          <span class="material-symbols-outlined">logout</span>
-          <p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Cerrar Sesión</p>
-        </a>
-      </div>
-    </aside>
-    <main class="flex-1 p-8">
-      <div class="mx-auto max-w-5xl">
-        <header class="mb-6">
-          <h1 class="text-gray-900 dark:text-gray-50 text-4xl font-bold leading-tight tracking-[-0.033em]">Mis Viajes</h1>
-        </header>
-        <div class="flex flex-wrap items-center gap-4 py-3 mb-6">
-          <div class="relative flex-grow">
-            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
-            <input class="w-full h-10 pl-10 pr-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-surface-light dark:bg-surface-dark text-sm focus:ring-primary focus:border-primary" placeholder="Buscar por ciudad, fecha o número de tren..." type="text"/>
-          </div>
-          <button class="flex w-full sm:w-auto items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-6 hover:bg-primary-light transition-colors">
-            <span class="truncate">Buscar</span>
-          </button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
-            <div class="flex flex-col gap-1 flex-1">
-              <div class="inline-flex items-center gap-2 self-start rounded-full bg-green-500/10 dark:bg-green-500/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 mb-2">
-                <span class="material-symbols-outlined text-sm">check_circle</span>
-                A tiempo
-              </div>
-              <p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Madrid → Barcelona</p>
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">25 Dic, 2023 - 14:30h</p>
-              <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-2">
-                <span class="material-symbols-outlined text-base">train</span>
-                <p>Andén 5</p>
-              </div>
-            </div>
-            <button class="mt-4 w-full flex cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">Ver billete</button>
-          </div>
-          <div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
-            <div class="flex flex-col gap-1 flex-1">
-              <div class="inline-flex items-center gap-2 self-start rounded-full bg-orange-500/10 dark:bg-orange-500/20 px-2 py-1 text-xs font-medium text-orange-700 dark:text-orange-300 mb-2">
-                <span class="material-symbols-outlined text-sm">warning</span>
-                Retrasado
-              </div>
-              <p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Sevilla → Valencia</p>
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">15 Nov, 2023 - 09:00h</p>
-              <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-2">
-                <span class="material-symbols-outlined text-base">train</span>
-                <p>Andén 2</p>
-              </div>
-            </div>
-            <button class="mt-4 w-full flex cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">Ver billete</button>
-          </div>
-          <div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
-            <div class="flex flex-col gap-1 flex-1">
-              <div class="inline-flex items-center gap-2 self-start rounded-full bg-red-500/10 dark:bg-red-500/20 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300 mb-2">
-                <span class="material-symbols-outlined text-sm">cancel</span>
-                Cancelado
-              </div>
-              <p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Bilbao → Madrid</p>
-              <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">01 Oct, 2023 - 18:45h</p>
-              <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-2">
-                <span class="material-symbols-outlined text-base">train</span>
-                <p>Andén 9</p>
-              </div>
-            </div>
-            <button class="mt-4 w-full flex cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">Ver billete</button>
-          </div>
-          <div class="flex flex-col items-center justify-center text-center p-4 bg-gray-50 dark:bg-gray-900/40 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 min-h-[196px]">
-            <span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-500 mb-2">delete</span>
-            <p class="text-gray-800 dark:text-gray-200 font-medium mb-1">No tienes más viajes programados</p>
-            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Los billetes que compres aparecerán aquí.</p>
-            <button class="flex items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">
-              <span class="material-symbols-outlined text-base">search</span>
-              <span>Buscar viaje</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-</body>
-</html>
+<div class="relative flex h-auto min-h-screen w-full flex-row">
+<aside class="flex h-screen min-h-[700px] w-64 flex-col justify-between border-r border-gray-200 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-4 sticky top-0">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary text-white">
+<span class="material-symbols-outlined">train</span>
+</div>
+<h1 class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-normal">TrainLife</h1>
+</div>
+<button class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">menu</span>
+</button> 
+</div> 
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Inicio</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-light" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<p class="text-sm font-medium leading-normal">Mis Viajes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">route</span>
+<p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Rutas</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Avisos</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-gray-900 dark:text-gray-200 text-sm font-medium leading-normal">Cerrar Sesión</p>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="mx-auto max-w-5xl">
+<header class="mb-6">
+<h1 class="text-gray-900 dark:text-gray-50 text-4xl font-bold leading-tight tracking-[-0.033em]">Mis Viajes</h1>
+</header>
+<div class="flex flex-wrap items-center gap-4 py-3 mb-6">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-surface-light dark:bg-surface-dark text-sm focus:ring-primary focus:border-primary" placeholder="Buscar por ciudad, fecha o número de tren..." type="text"/>
+</div>
+<button class="flex w-full sm:w-auto items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-6 hover:bg-primary-light transition-colors">
+<span class="truncate">Buscar</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<div class="inline-flex items-center gap-2 self-start rounded-full bg-green-500/10 dark:bg-green-500/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 mb-2">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                    A tiempo
+                </div>
+<p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Madrid → Barcelona</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">25 Dic, 2023 - 14:30h</p>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-2">
+<span class="material-symbols-outlined text-base">train</span>
+<p>Andén 5</p>
+</div>
+</div>
+<button class="mt-4 w-full flex cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">Ver billete</button>
+</div>
+<div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<div class="inline-flex items-center gap-2 self-start rounded-full bg-orange-500/10 dark:bg-orange-500/20 px-2 py-1 text-xs font-medium text-orange-700 dark:text-orange-300 mb-2">
+<span class="material-symbols-outlined text-sm">warning</span>
+                    Retrasado
+                </div>
+<p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Sevilla → Valencia</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">15 Nov, 2023 - 09:00h</p>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-2">
+<span class="material-symbols-outlined text-base">train</span>
+<p>Andén 2</p>
+</div>
+</div>
+<button class="mt-4 w-full flex cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">Ver billete</button>
+</div>
+<div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
+<div class="flex flex-col gap-1 flex-1">
+<div class="inline-flex items-center gap-2 self-start rounded-full bg-red-500/10 dark:bg-red-500/20 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300 mb-2">
+<span class="material-symbols-outlined text-sm">cancel</span>
+                    Cancelado
+                </div>
+<p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Bilbao → Madrid</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">01 Oct, 2023 - 18:45h</p>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-2">
+<span class="material-symbols-outlined text-base">train</span>
+<p>Andén 9</p>
+</div>
+</div>
+<button class="mt-4 w-full flex cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">Ver billete</button>
+</div>
+<div class="flex flex-col items-center justify-center text-center p-4 bg-gray-50 dark:bg-gray-900/40 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 min-h-[196px]">
+<span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-500 mb-2">delete</span>
+<p class="text-gray-800 dark:text-gray-200 font-medium mb-1">No tienes más viajes programados</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Los billetes que compres aparecerán aquí.</p>
+<button class="flex items-center justify-center rounded-lg h-10 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 hover:bg-primary-light transition-colors">
+<span class="material-symbols-outlined text-base">search</span>
+<span>Buscar viaje</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
