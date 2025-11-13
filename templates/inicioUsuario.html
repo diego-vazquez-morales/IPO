@@ -1,126 +1,139 @@
 <!DOCTYPE html>
-
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>App de Trenes - Inicio</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#137fec",
-            "background-light": "#f6f7f8",
-            "background-dark": "#101922",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans", "Noto Sans", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-    }
-  </style>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Trenes - Inicio Usuario</title>
+  <link rel="stylesheet" href="../static/styles/inicioUsuario.css">
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark">
-<div class="relative flex h-auto min-h-screen w-full group/design-root overflow-x-hidden">
-<div class="flex w-full">
-<!-- SideNavBar -->
-<aside class="flex flex-col w-64 p-4 bg-white dark:bg-gray-900/50 border-r border-gray-200 dark:border-gray-800 h-screen sticky top-0">
-<div class="flex h-full flex-col justify-between">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-3 px-3">
-<div class="bg-primary flex items-center justify-center aspect-square rounded-full size-10 text-white">
-<span class="material-symbols-outlined text-2xl">train</span>
-</div>
-<div class="flex flex-col">
-<h1 class="text-gray-900 dark:text-gray-100 text-base font-bold leading-normal">App de Trenes</h1>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Bienvenido</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2 mt-4">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary" href="#">
-<span class="material-symbols-outlined !fill-1">home</span>
-<p class="text-sm font-medium leading-normal">Inicio</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
-<span class="material-symbols-outlined">map</span>
-<p class="text-sm font-medium leading-normal">Buscar Rutas</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
-<span class="material-symbols-outlined">departure_board</span>
-<p class="text-sm font-medium leading-normal">Estado del Tren</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-800 dark:text-gray-200" href="#">
-<span class="material-symbols-outlined">info</span>
-<p class="text-sm font-medium leading-normal">Acerca de Nosotros</p>
-</a>
-</nav>
-</div>
-<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-<span class="truncate">Iniciar Sesión</span>
-</button>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="flex-1 p-8 overflow-y-auto">
-<div class="max-w-4xl mx-auto">
-<!-- PageHeading -->
-<div class="flex flex-wrap justify-between gap-3 mb-6">
-<p class="text-gray-900 dark:text-gray-100 text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Accesos Rápidos</p>
-</div>
-<!-- ImageGrid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-3 pb-3 bg-white dark:bg-gray-900/50 p-4 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Stylized map showing a train route from one point to another" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHMfZyu3n60pVG3tKTVk_q30d5hKTnBhLQwazUa7ZKBwamFjYadFCf0TqjKLHicfuY-xYoEx3_8InOEDHpAn0YtsbK4JSOr-RhdW5tYinjK_sbUw4l6vgM_4y_c0id85ZorcHBh1IPRH_boVYB_AjNa2HD1Yofl3G5bl8OnOXXFOGycYHh3eMCelVa76-vLaDGo1q4YY9zkG6vwbI1dAnnkumWmxoqyL12e9-h_1Ce3zFShFMtle2tb7n7s_wnkvp4WZ5wFFfm0z0");'></div>
-<div>
-<p class="text-gray-900 dark:text-gray-100 text-base font-bold leading-normal">Planifica tu Viaje</p>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-1">Encuentra la mejor ruta para tu destino.</p>
-</div>
-</div>
-<div class="flex flex-col gap-3 pb-3 bg-white dark:bg-gray-900/50 p-4 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A modern train station with a clock on the wall, indicating time" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUb2OOggVoRv5Z-E7oEnbpDbwb46k8AqjGmG07ZjEjURQUm9hFTF8X0xEaHqmrt9wm424PIY8Z4MfMIOPJbp7W6HuSqfXHNz180bVN97gtbqq8y45n3c7ybGpaoxOSbvrZtn_mn_bfLKVmDsDxSRBa0we5apPiogpjzxW2JoeirUeAVCdqDgILtqu-TF0L6vLnbmUfMlMOmUI1ldS1aXxFH2OqLL0PKcaxw3QJGHvcx29Ozo6WMEzitvczThMFFtl7FDrFl0kxCbk");'></div>
-<div>
-<p class="text-gray-900 dark:text-gray-100 text-base font-bold leading-normal">Consulta Horarios en Tiempo Real</p>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-1">Revisa los horarios actualizados al minuto.</p>
-</div>
-</div>
-<div class="flex flex-col gap-3 pb-3 bg-white dark:bg-gray-900/50 p-4 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A notification bell icon on a digital screen, representing service alerts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCINX46wTHqiuMFHIIK_z1M63Sz2L3OnylfgZppQjxpSfkYvEXMJSlR3ahkeep35SE0GU3A2DOYxrTh2ucCKQMDvlW57HUFMd9XNwfGq8A-tGup6zLa2OVn6VlzMLeYNijDT2VXRq5zoeQk7XylDLGnfDXjs-kz_GLwNv74BBBdrh14L9rH14h5UU1jl2gDiL87t0CXZrGBdSsJuDQNJXjoGhTEMsy-aI6-ygPs_wIjKISruY0s37ZjOrmAzIZLwbRfl4U2hRpHUF0");'></div>
-<div>
-<p class="text-gray-900 dark:text-gray-100 text-base font-bold leading-normal">Ver Avisos del Servicio</p>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal mt-1">Mantente informado sobre cualquier interrupción.</p>
-</div>
-</div>
-</div>
-<!-- SectionHeader -->
-<h2 class="text-gray-900 dark:text-gray-100 text-[22px] font-bold leading-tight tracking-[-0.015em] pt-12 pb-3">Tu Compañero de Viaje Ideal</h2>
-<!-- BodyText -->
-<p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-relaxed pb-3">
-            Organiza tus billetes, recibe alertas de andén y planifica tus rutas favoritas, todo en un mismo lugar. Inicia sesión para acceder a todas las funcionalidades y personalizar tu experiencia.
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" role="navigation" aria-label="Menú principal de navegación">
+      <div class="sidebar-content">
+        <!-- Logo and Welcome -->
+        <div class="logo-section">
+          <div class="logo-icon" role="img" aria-label="Icono de tren">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <h1 id="app-title">App de Trenes</h1>
+            <p class="welcome-text">Bienvenido</p>
+          </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" aria-labelledby="app-title">
+          <a href="/inicioUsuario" 
+             class="nav-item active" 
+             aria-current="page"
+             aria-label="Inicio, página actual">
+            <span class="nav-icon" aria-hidden="true">🏠</span>
+            <span>Inicio</span>
+          </a>
+          <a href="/misViajes" 
+             class="nav-item"
+             aria-label="Ir a Mis Viajes">
+            <span class="nav-icon" aria-hidden="true">🎫</span>
+            <span>Mis Viajes</span>
+          </a>
+          <a href="/verRutas" 
+             class="nav-item"
+             aria-label="Ir a Ver Rutas">
+            <span class="nav-icon" aria-hidden="true">🗺️</span>
+            <span>Rutas</span>
+          </a>
+          <a href="/avisos" 
+             class="nav-item"
+             aria-label="Ir a Avisos del servicio">
+            <span class="nav-icon" aria-hidden="true">📢</span>
+            <span>Avisos</span>
+          </a>
+        </nav>
+
+        <!-- Login Button -->
+        <button id="loginBtn" 
+                class="login-btn" 
+                aria-label="Iniciar sesión en la aplicación">
+          Iniciar Sesión
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main" aria-labelledby="main-heading">
+      <div class="content-wrapper">
+        <!-- Page Heading -->
+        <h2 id="main-heading" class="page-title">Accesos Rápidos</h2>
+
+        <!-- Quick Access Cards -->
+        <div class="cards-grid" role="region" aria-label="Accesos rápidos a funcionalidades">
+          <!-- Card 1: Planifica tu Viaje -->
+          <article class="card" 
+                   tabindex="0" 
+                   role="button"
+                   aria-labelledby="card-1-title"
+                   data-navigate="verRutas">
+            <div class="card-image" role="img" aria-label="Mapa estilizado mostrando una ruta de tren de un punto a otro">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHMfZyu3n60pVG3tKTVk_q30d5hKTnBhLQwazUa7ZKBwamFjYadFCf0TqjKLHicfuY-xYoEx3_8InOEDHpAn0YtsbK4JSOr-RhdW5tYinjK_sbUw4l6vgM_4y_c0id85ZorcHBh1IPRH_boVYB_AjNa2HD1Yofl3G5bl8OnOXXFOGycYHh3eMCelVa76-vLaDGo1q4YY9zkG6vwbI1dAnnkumWmxoqyL12e9-h_1Ce3zFShFMtle2tb7n7s_wnkvp4WZ5wFFfm0z0" 
+                   alt="Mapa estilizado mostrando una ruta de tren de un punto a otro"
+                   loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 id="card-1-title" class="card-title">Planifica tu Viaje</h3>
+              <p class="card-description">Encuentra la mejor ruta para tu destino.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Consulta Horarios -->
+          <article class="card" 
+                   tabindex="0" 
+                   role="button"
+                   aria-labelledby="card-2-title"
+                   data-navigate="verRutas">
+            <div class="card-image" role="img" aria-label="Estación de tren moderna con un reloj en la pared indicando la hora">
+              <img src="https://www.lemonsalt.co.uk/cdn/shop/files/karlsson-natural-cuckoo-wall-clock-jungle-green-lemonsalt-1_a48c0bac-b83d-4587-9a19-0237609b6313_512x512.jpg?v=1743933279" 
+                   alt="Estación de tren moderna con un reloj en la pared indicando la hora"
+                   loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 id="card-2-title" class="card-title">Consulta Horarios en Tiempo Real</h3>
+              <p class="card-description">Revisa los horarios actualizados al minuto.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Ver Avisos -->
+          <article class="card" 
+                   tabindex="0" 
+                   role="button"
+                   aria-labelledby="card-3-title"
+                   data-navigate="avisos">
+            <div class="card-image" role="img" aria-label="Icono de campana de notificación en una pantalla digital representando alertas de servicio">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCINX46wTHqiuMFHIIK_z1M63Sz2L3OnylfgZppQjxpSfkYvEXMJSlR3ahkeep35SE0GU3A2DOYxrTh2ucCKQMDvlW57HUFMd9XNwfGq8A-tGup6zLa2OVn6VlzMLeYNijDT2VXRq5zoeQk7XylDLGnfDXjs-kz_GLwNv74BBBdrh14L9rH14h5UU1jl2gDiL87t0CXZrGBdSsJuDQNJXjoGhTEMsy-aI6-ygPs_wIjKISruY0s37ZjOrmAzIZLwbRfl4U2hRpHUF0" 
+                   alt="Icono de campana de notificación en una pantalla digital representando alertas de servicio"
+                   loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3 id="card-3-title" class="card-title">Ver Avisos del Servicio</h3>
+              <p class="card-description">Mantente informado sobre cualquier interrupción.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Additional Information Section -->
+        <section class="info-section" aria-labelledby="info-heading">
+          <h2 id="info-heading" class="section-title">Tu Compañero de Viaje Ideal</h2>
+          <p class="section-text">
+            Organiza tus billetes, recibe alertas de andén y planifica tus rutas favoritas, todo en un mismo lugar. 
+            Inicia sesión para acceder a todas las funcionalidades y personalizar tu experiencia.
           </p>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../static/js/inicioUsuario.js"></script>
+</body>
+</html>
