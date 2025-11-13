@@ -53,6 +53,13 @@ def viajesDetalles():
     viaje_id = request.args.get('id')
     return render_template('ViajesDetalles.html', viaje_id=viaje_id)
 
+@app.route('/MisRutas')
+def misRutas():
+    return render_template('MisRutas.html')
+
+@app.route('/configuracionNotificaciones')
+def configuracionNotificaciones():
+    return render_template('configuracionNotificaciones.html')
 
 # Punto de entrada
 if __name__ == '__main__':

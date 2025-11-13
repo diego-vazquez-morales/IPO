@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mis Rutas Guardadas - TrainLife</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/MisRutas.css') }}">
+    <script defer src="{{ url_for('static', filename='js/misRutas.js') }}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="logo-section">
+                    <span class="material-symbols-outlined logo-icon">train</span>
+                    <h1 class="logo-text">TrainLife</h1>
+                </div>
+                <nav class="nav-menu">
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">luggage</span>
+                        <span>Mis viajes</span>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">tune</span>
+                        <span>Mis preferencias</span>
+                    </a>
+                    <a class="nav-item active" href="#">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span>Mis rutas</span>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">map</span>
+                        <span>Ver rutas</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a class="nav-item" href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <nav class="breadcrumb">
+                    <a href="#" class="breadcrumb-item">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item breadcrumb-current">Mis Rutas</span>
+                </nav>
+                
+                <h1 class="page-title">Mis Rutas Guardadas</h1>
+                
+                <div class="routes-container">
+                    <!-- Ruta 1: Casa al Trabajo (Expandida) -->
+                    <div class="route-card route-card-expanded">
+                        <div class="route-header">
+                            <div class="route-info">
+                                <h2 class="route-title">Casa al Trabajo</h2>
+                                <p class="route-subtitle">Estación Central a Distrito Financiero</p>
+                                <div class="route-actions">
+                                    <button class="btn btn-primary" id="verDetalles">
+                                        <span class="material-symbols-outlined">schedule</span>
+                                        <span>Ver Detalles</span>
+                                    </button>
+                                    <button class="btn btn-delete">
+                                        <span class="material-symbols-outlined">delete</span>
+                                        <span>Eliminar de favoritos</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="route-map route-map-main"></div>
+                        </div>
+                        
+                        <div class="route-details">
+                            <div class="transfers-badge">
+                                <span class="transfers-label">Transbordos:</span>
+                                <span class="transfers-count">2</span>
+                            </div>
+                            
+                            <!-- Línea 1 -->
+                            <div class="line-section">
+                                <h3 class="line-title">Línea 1 (Roja)</h3>
+                                <div class="line-content">
+                                    <div class="line-info-grid">
+                                        <div class="info-item">
+                                            <span class="info-label">Estación de Salida</span>
+                                            <span class="info-value">Estación Central</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Andén de Salida</span>
+                                            <span class="info-value">3B</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Estación de Llegada</span>
+                                            <span class="info-value">Estación Intermedia</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Andén de Llegada</span>
+                                            <span class="info-value">1A</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Hora de Salida</span>
+                                            <span class="info-value">08:00 AM</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Hora de Llegada</span>
+                                            <span class="info-value">08:25 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="line-image-container">
+                                        <span class="image-label">Imagen del Trayecto de la Línea</span>
+                                        <div class="line-route-image line-route-image-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Línea 2 -->
+                            <div class="line-section">
+                                <h3 class="line-title">Línea 2 (Azul)</h3>
+                                <div class="line-content">
+                                    <div class="line-info-grid">
+                                        <div class="info-item">
+                                            <span class="info-label">Estación de Salida</span>
+                                            <span class="info-value">Estación Intermedia</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Andén de Salida</span>
+                                            <span class="info-value">5C</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Estación de Llegada</span>
+                                            <span class="info-value">Distrito Financiero</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Andén de Llegada</span>
+                                            <span class="info-value">2D</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Hora de Salida</span>
+                                            <span class="info-value">08:35 AM</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <span class="info-label">Hora de Llegada</span>
+                                            <span class="info-value">08:50 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="line-image-container">
+                                        <span class="image-label">Imagen del Trayecto de la Línea</span>
+                                        <div class="line-route-image line-route-image-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ruta 2: Oficina a Ciudad Playa -->
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-info">
+                                <h2 class="route-title">Oficina a Ciudad Playa</h2>
+                                <p class="route-subtitle">Distrito Financiero a Costa del Sol</p>
+                                <div class="route-actions">
+                                    <button class="btn btn-primary">
+                                        <span class="material-symbols-outlined">schedule</span>
+                                        <span>Ver Detalles</span>
+                                    </button>
+                                    <button class="btn btn-delete">
+                                        <span class="material-symbols-outlined">delete</span>
+                                        <span>Eliminar de favoritos</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="route-map route-map-beach"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ruta 3: Viaje Familiar a Montaña -->
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-info">
+                                <h2 class="route-title">Viaje Familiar a Montaña</h2>
+                                <p class="route-subtitle">Estación Central a Villa Serrana</p>
+                                <div class="route-actions">
+                                    <button class="btn btn-primary">
+                                        <span class="material-symbols-outlined">schedule</span>
+                                        <span>Ver Detalles</span>
+                                    </button>
+                                    <button class="btn btn-delete">
+                                        <span class="material-symbols-outlined">delete</span>
+                                        <span>Eliminar de favoritos</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="route-map route-map-mountain"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

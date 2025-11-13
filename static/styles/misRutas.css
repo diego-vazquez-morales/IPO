@@ -1,0 +1,423 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Iconos Material */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: 24px;
+}
+
+.icon-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 16px;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    color: #1049bd;
+    font-size: 32px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: rgba(16, 73, 189, 0.1);
+}
+
+.nav-item.active {
+    background-color: #1049bd;
+    color: #ffffff;
+}
+
+.nav-item .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.breadcrumb-item {
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-item:hover {
+    color: #1049bd;
+}
+
+.breadcrumb-current {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #999999;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 32px;
+}
+
+/* Container de rutas */
+.routes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Tarjetas de ruta */
+.route-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e5e5;
+}
+
+.route-card-selected {
+    border: 2px solid #1049bd;
+}
+
+.route-header {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.route-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.route-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.route-subtitle {
+    font-size: 14px;
+    color: #666666;
+}
+
+.route-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.btn-primary {
+    background-color: #1049bd;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0d3a94;
+}
+
+.btn-secondary {
+    background-color: rgba(16, 73, 189, 0.15);
+    color: #1049bd;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(16, 73, 189, 0.25);
+}
+
+.btn-delete {
+    background-color: transparent;
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Mapa de ruta */
+.route-map {
+    width: 180px;
+    height: 140px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.route-map-main {
+    background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFCZR0x8VcnqT6RG2hA_4pFoIXX7WWwQOkCXsHQJpAUymAZ6xp8bsylSIydPH_lk3Jg27IB4roVP0nMGsjc3QR-1AM5FN9dMNJi_uM2JrsfWscwAM4wsAT1RwDyqVcjgHn6PzY-Zb42pmB5OAgqFaYvfYGgJj7zBEqeT_-8WgccY3dsnNFMz90MZ_qg6AJFJWY000TTad9N2id_XW4MxUgvKNjnbHpraVKHjcncMg4ljZ-MKGxsw_840FA0MJTmCLtxXNx3Qtg7PU");
+}
+
+.route-map-beach {
+    background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB05PK7K3XozI8n-JQ6EZ1JpfANPOP7_RTHDT6Ef_2sl5Z7wm1X4tM8H20JuvDLXA26T89QE9XnnusZd77CA5FQn5NM2fs85XP-8jAc9Ynz5Bpycls508nvnkM0euhkFa4RQusLN-q40L0Ac4SsQF0gpPtsBZPbq-6JjRgZSAn-FoiRrNBZGaiyiSqxdXIJ0w1ryrfHkzgRRUEYqtipyyMrkGdyncsKOMJB4YFRkBtwJt6DSkRE8qLHsGSsi20EOFK_FlCzcEr1dhY");
+}
+
+.route-map-mountain {
+    background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqIyLzJ7BMuoS3v7j9wBBykCoT-9aBIQD4AKEqy7-mjfZRwx2z0ByV2VKSoEiWnRXmAZpf9jCCSjd3w0UO0aAYqC3e9uWnyiVrlAxBLCRE0wPp85xfrrpTIbnfDpFDQ1IngD6-Ujzh3kAknXaJkSnkWAkzHn7jOxpepV_PbTpae-nTa_zrC8Yu7GepRP957HxywCvfGiTA57kvODVxP0q6Dr2GiEb4PPR8XlqhNTtvoreq1ssS4DTvu4Hdya0qoIwdSMC5YLgwGsQ");
+}
+
+/* Detalles de ruta */
+.route-details {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e5e5;
+    flex-direction: column;
+    gap: 24px;
+    display: none;
+}
+
+.route-details-expanded {
+    display: flex;
+}
+
+.transfers-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.transfers-label {
+    color: #666666;
+}
+
+.transfers-count {
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Secciones de línea */
+.line-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.line-section + .line-section {
+    padding-top: 24px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.line-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.line-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+}
+
+.line-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 13px;
+    color: #666666;
+}
+
+.info-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.line-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 200px;
+}
+
+.image-label {
+    font-size: 13px;
+    color: #666666;
+}
+
+.line-route-image {
+    width: 200px;
+    height: 120px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0;
+}
+
+.line-route-image-1 {
+    background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzEs0c8srBu_IlRyp-ypVz6cgzwDexbf9Ioz_ea8nAIs8WZHugS4Sw8I0ZfuWrNl9P6KpkvtGLx6-wsXglCcATyTZz7dfebU7mH2DudXLj3h61MruB-x35E918ch3Xc0hsrbTsgK85RO9Yrgi2dABeS2mSxFZUVsu-jftDynBlbW8tZ8zu3vI4UEhWh8FuynPo-0s8Pu8jVY9XfJCtXnRYIJWyyv-2xznrHFz97a3k8-vrmGujsH1epki3XF5YNw7Y4DK8Bw77Mvs");
+}
+
+.line-route-image-2 {
+    background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzEs0c8srBu_IlRyp-ypVz6cgzwDexbf9Ioz_ea8nAIs8WZHugS4Sw8I0ZfuWrNl9P6KpkvtGLx6-wsXglCcATyTZz7dfebU7mH2DudXLj3h61MruB-x35E918ch3Xc0hsrbTsgK85RO9Yrgi2dABeS2mSxFZUVsu-jftDynBlbW8tZ8zu3vI4UEhWh8FuynPo-0s8Pu8jVY9XfJCtXnRYIJWyyv-2xznrHFz97a3k8-vrmGujsH1epki3XF5YNw7Y4DK8Bw77Mvs");
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .route-header {
+        flex-direction: column;
+    }
+    
+    .route-map {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .line-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .line-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .line-image-container {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .line-route-image {
+        width: 100%;
+    }
+}
