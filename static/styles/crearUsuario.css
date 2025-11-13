@@ -1,32 +1,362 @@
-/* crearUsuario.css - estilos para crearUsuario.html */
-body {
-    font-family: Segoe UI, Roboto, Arial, sans-serif;
-    background: #f6f7fb;
-    margin: 0;
-    color: #222
+/* ================================================= */
+/* 1. Configuración y Variables de Diseño           */
+/* ================================================= */
+
+:root {
+    /* Colores personalizados de Tailwind (ahora como variables CSS) */
+    --color-primary: #0f49bd;
+    --color-background-light: #f6f6f8;
+    --color-background-dark: #101622;
+    /* Colores específicos del tema claro/oscuro que usan valores absolutos */
+    --color-text-dark-primary: #0d121b;
+    --color-text-light-secondary: #4c669a;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
 }
 
-.container {
-    max-width: 600px;
-    margin: 24px auto;
-    padding: 16px
+/* Estilos de fuentes y cuerpo */
+.page-body {
+    font-family: 'Lexend', sans-serif !important; 
 }
 
-.card {
-    background: #fff;
-    padding: 18px;
-    border-radius: 8px;
-    border: 1px solid #eee
-}
-
-input,
-button {
-    width: 100%;
-    padding: 8px;
-    margin: 6px 0
-}
-
+/* Configuración de íconos de Material Symbols */
 .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
 }
 
+/* ================================================= */
+/* 2. Estructura Principal y Fondo                  */
+/* ================================================= */
+
+.main-wrapper {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-light);
+    padding: 1rem;
+    overflow-x: hidden;
+}
+.light .main-wrapper {
+    background-color: var(--color-background-light);
+}
+.dark .main-wrapper {
+    background-color: var(--color-background-dark);
+}
+@media (min-width: 640px) { /* sm: */
+    .main-wrapper {
+        padding: 1.5rem;
+    }
+}
+@media (min-width: 1024px) { /* lg: */
+    .main-wrapper {
+        padding: 2rem;
+    }
+}
+
+.layout-container {
+    display: flex;
+    width: 100%;
+    max-width: 32rem;
+    flex-direction: column;
+}
+
+/* ================================================= */
+/* 3. Tarjeta del Formulario (Main)                 */
+/* ================================================= */
+
+.form-card {
+    width: 100%;
+    border-radius: 0.75rem;
+    background-color: white;
+    border: 1px solid var(--color-slate-200);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    padding: 1rem !important; /* Compactación forzada */
+}
+.dark .form-card {
+    background-color: rgba(16, 22, 34, 0.5);
+    border-color: var(--color-slate-800);
+}
+@media (min-width: 640px) { /* sm: */
+    .form-card {
+        padding: 1.5rem !important; /* Compactación forzada */
+    }
+}
+
+/* ================================================= */
+/* 4. Encabezado del Formulario                     */
+/* ================================================= */
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.125rem !important; /* Compactación forzada */
+    margin-bottom: 0.75rem !important; /* Compactación forzada */
+}
+
+.logo-icon-wrap {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: rgba(15, 73, 189, 0.1);
+    margin-bottom: 0.25rem !important; /* Compactación forzada */
+}
+
+.logo-icon {
+    color: var(--color-primary);
+    font-size: 1.875rem;
+}
+
+.title {
+    color: var(--color-text-dark-primary);
+    font-size: 1.875rem;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -0.033em;
+}
+.dark .title {
+    color: white;
+}
+
+.subtitle {
+    color: var(--color-text-light-secondary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.dark .subtitle {
+    color: var(--color-slate-400);
+}
+
+/* ================================================= */
+/* 5. Formulario y Campos de Entrada                */
+/* ================================================= */
+
+.form-layout {
+    gap: 0.5rem !important; /* Compactación forzada */
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group-container {
+    gap: 0.25rem !important; /* Compactación forzada */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem !important;
+}
+
+.input-label {
+    color: var(--color-text-dark-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding-bottom: 0.125rem !important; /* Compactación forzada */
+    padding-right: 2.75rem !important;
+}
+.dark .input-label {
+    color: var(--color-slate-300);
+    padding-right: 2.75rem !important;
+}
+
+.form-input-field {
+    /* Altura del input (box) compactada */
+    height: 2.25rem !important; /* Altura forzada (36px) */
+    padding-left: 0.625rem !important; 
+    padding-right: 0.625rem !important; /* Padding simétrico forzado */
+    font-size: 0.9375rem !important; /* Fuente forzada */
+
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-shrink: 0;
+    flex-grow: 1;
+    resize: none;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    line-height: 1.5;
+
+    /* Colores y borde */
+    color: var(--color-text-dark-primary);
+    border: 1px solid var(--color-slate-300);
+    background-color: var(--color-background-light);
+}
+
+/* Input - Dark Mode */
+.dark .form-input-field {
+    color: white;
+    border-color: var(--color-slate-700);
+    background-color: var(--color-background-dark);
+}
+.dark .form-input-field::placeholder {
+    color: var(--color-slate-500);
+}
+
+/* Input - Focus State (Anillo) */
+.form-input-field:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(15, 73, 189, 0.5);
+    border-color: var(--color-primary);
+}
+
+
+/* ================================================= */
+/* 6. Campo de Contraseña (Password)                */
+/* ================================================= */
+
+.password-input-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+    border-radius: 0.5rem; 
+}
+
+/* Ajustar padding para el campo de contraseña */
+.password-input {
+    padding-right: 3.75rem !important; /* Padding forzado para el botón de visibilidad */
+}
+
+.toggle-password-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.25rem !important; /* Posición forzada */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 2.25rem !important; /* Ancho forzado */
+    height: 100%;
+    cursor: pointer;
+    
+    color: var(--color-slate-500);
+}
+.dark .toggle-password-button {
+    color: var(--color-slate-400);
+}
+.toggle-password-button:hover {
+    color: var(--color-primary);
+}
+
+.icon-visibility {
+    font-size: 1.125rem;
+}
+
+/* ================================================= */
+/* 7. Checkbox de Términos                          */
+/* ================================================= */
+
+.terms-checkbox-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem !important; /* Compactación forzada */
+}
+
+.form-checkbox-field {
+    margin-top: 0.125rem;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-slate-300);
+    color: var(--color-primary);
+}
+.form-checkbox-field:focus {
+    box-shadow: 0 0 0 2px rgba(15, 73, 189, 0.5);
+}
+
+.terms-text {
+    font-size: 0.875rem;
+    color: var(--color-text-light-secondary);
+}
+.dark .terms-text {
+    color: var(--color-slate-400);
+}
+
+.terms-link, .footer-link {
+    font-weight: 500;
+    color: var(--color-primary);
+}
+.terms-link:hover, .footer-link:hover {
+    text-decoration: underline;
+}
+
+/* ================================================= */
+/* 8. Botón de Enviar (Submit)                      */
+/* ================================================= */
+
+.primary-submit-button {
+    display: flex;
+    width: 100%;
+    min-width: 84px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    
+    height: 2.25rem !important; /* Altura forzada */
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+    
+    background-color: var(--color-primary);
+    color: white;
+    transition-property: background-color;
+    transition-duration: 150ms;
+    
+    margin-top: 0.5rem !important; /* Compactación forzada */
+}
+
+.primary-submit-button:hover {
+    background-color: rgba(15, 73, 189, 0.9);
+}
+
+.primary-submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px white;
+}
+.dark .primary-submit-button:focus {
+    box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px var(--color-background-dark);
+}
+
+/* ================================================= */
+/* 9. Footer                                        */
+/* ================================================= */
+
+.page-footer {
+    margin-top: 0.75rem !important; /* Compactación forzada */
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: var(--color-text-light-secondary);
+}
+.dark .footer-text {
+    color: var(--color-slate-400);
+}
+
+.footer-link {
+    font-weight: 700;
+}
