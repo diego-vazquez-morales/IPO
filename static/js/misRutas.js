@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     routeCards.forEach(function(routeCard) {
-        routeCard.addEventListener("click", function() {
+        routeCard.addEventListener("mouseenter", function() {
+            routeCard.classList.toggle("route-card-selected");
+        });
+        routeCard.addEventListener("mouseleave", function() {
             routeCard.classList.toggle("route-card-selected");
         });
     });
