@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Configuración de Notificaciones - TrainLife</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/configuracionNotificaciones.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="logo-section">
+                    <span class="material-symbols-outlined logo-icon">train</span>
+                    <h1 class="logo-text">TrainLife</h1>
+                </div>
+                <nav class="nav-menu">
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Inicio de la aplicación</span>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">luggage</span>
+                        <span>Mis viajes</span>
+                    </a>
+                    <a class="nav-item active" href="#">
+                        <span class="material-symbols-outlined">tune</span>
+                        <span>Configuración de Notificaciones</span>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span>Mis rutas</span>
+                    </a>
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined">map</span>
+                        <span>Ver rutas</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a class="nav-item" href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <nav class="breadcrumb">
+                    <a href="#" class="breadcrumb-item">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item breadcrumb-current">Configuración de Notificaciones</span>
+                </nav>
+                
+                <h1 class="page-title">Configuración de Notificaciones</h1>
+                <p class="page-subtitle">Gestiona cómo y cuándo te notificamos sobre tus viajes y la aplicación.</p>
+                
+                <div class="info-banner">
+                    <span class="material-symbols-outlined info-icon">info</span>
+                    <p class="info-text">Para una mejor experiencia, te recomendamos mantener las notificaciones activas. Así recibirás información importante sobre tus viajes en tiempo real.</p>
+                </div>
+                
+                <div class="settings-section">
+                    <h2 class="section-title">Notificaciones de Viajes y Rutas</h2>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <p class="setting-label">Modificaciones en mis viajes</p>
+                            <p class="setting-description">Recibe alertas sobre cambios, retrasos o cancelaciones.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked id="travel-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-divider"></div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <p class="setting-label">Modificaciones en mis rutas</p>
+                            <p class="setting-description">Notificaciones sobre cambios en tus rutas guardadas.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="route-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h2 class="section-title">Notificaciones Generales</h2>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <p class="setting-label">Avisos generales de TrainLife</p>
+                            <p class="setting-description">Promociones, noticias y actualizaciones de la app.</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked id="general-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" type="button">Guardar Cambios</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

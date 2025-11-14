@@ -1,210 +1,243 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ver Rutas de Tren</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
-    </style>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#3b82f6", // A nice, accessible blue
-              "background-light": "#f3f4f6", // Light Gray
-              "background-dark": "#111827", // Dark Slate
-            },
-            fontFamily: {
-              display: ["Inter", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem", // 8px
-            },
-          },
-        },
-      };
-    </script>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ver Rutas de Tren - TrainApp</title>
+  <link rel="stylesheet" href="../static/styles/verRutas.css">
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark min-h-screen antialiased">
-<div class="flex min-h-screen">
-<aside class="w-64 flex-shrink-0 bg-white dark:bg-gray-800 shadow-lg flex flex-col">
-<div class="h-16 flex items-center justify-between px-4 border-b border-gray-200 dark:border-gray-700">
-<h2 class="text-2xl font-bold text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-3xl">train</span>
-<span>TrainApp</span>
-</h2>
-<button class="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-<nav class="flex-1 px-4 py-6 space-y-2">
-<a class="flex items-center gap-3 px-4 py-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
-<span class="material-symbols-outlined">home</span>
-<span>Inicio</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
-<span class="material-symbols-outlined">luggage</span>
-<span>Mis Viajes</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-2 text-white bg-primary rounded-lg shadow" href="#">
-<span class="material-symbols-outlined">route</span>
-<span>Rutas</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
-<span class="material-symbols-outlined">notifications</span>
-<span>Avisos</span>
-</a>
-</nav>
-<div class="px-4 py-6 border-t border-gray-200 dark:border-gray-700">
-<a class="flex items-center gap-3 px-4 py-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="#">
-<span class="material-symbols-outlined">logout</span>
-<span>Cerrar Sesión</span>
-</a>
-</div>
-</aside>
-<div class="flex-1">
-<div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
-<header class="mb-8">
-<h1 class="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-2">Consulta de Rutas</h1>
-<p class="text-lg text-gray-500 dark:text-gray-400">Encuentra tu próximo viaje en tren.</p>
-</header>
-<div class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-md mb-8">
-<form class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="origen">Origen</label>
-<div class="mt-1 relative rounded-md shadow-sm">
-<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-<span class="material-symbols-outlined text-gray-400">train</span>
-</div>
-<input class="block w-full rounded-md border-gray-300 dark:border-gray-600 pl-10 focus:border-primary focus:ring-primary sm:text-sm bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-200" id="origen" name="origen" placeholder="Ciudad de salida" type="text"/>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="destino">Destino</label>
-<div class="mt-1 relative rounded-md shadow-sm">
-<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-<span class="material-symbols-outlined text-gray-400">flag</span>
-</div>
-<input class="block w-full rounded-md border-gray-300 dark:border-gray-600 pl-10 focus:border-primary focus:ring-primary sm:text-sm bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-200" id="destino" name="destino" placeholder="Ciudad de llegada" type="text"/>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="fecha">Fecha</label>
-<div class="mt-1 relative rounded-md shadow-sm">
-<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-<span class="material-symbols-outlined text-gray-400">calendar_month</span>
-</div>
-<input class="block w-full rounded-md border-gray-300 dark:border-gray-600 pl-10 focus:border-primary focus:ring-primary sm:text-sm bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-200" id="fecha" name="fecha" type="date" value="2024-10-26"/>
-</div>
-</div>
-<div class="md:col-span-3">
-<button class="w-full mt-4 flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors" type="submit">
-<span class="material-symbols-outlined">search</span>
-                        Buscar Rutas
-                    </button>
-</div>
-</form>
-</div>
-<main>
-<h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Resultados de la Búsqueda</h2>
-<div class="space-y-4">
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
-<div class="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-<div class="flex-grow grid grid-cols-2 sm:grid-cols-3 md:flex md:items-center gap-6 text-center sm:text-left">
-<div class="flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Salida</p>
-<p class="text-xl font-semibold text-gray-900 dark:text-white">08:30</p>
-</div>
-<div class="flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Llegada</p>
-<p class="text-xl font-semibold text-gray-900 dark:text-white">11:45</p>
-</div>
-<div class="col-span-2 sm:col-span-1 flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Duración</p>
-<p class="text-lg text-gray-700 dark:text-gray-300">3h 15m</p>
-</div>
-</div>
-<div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-gray-200 dark:border-gray-700 sm:pl-6">
-<div class="text-center sm:text-right">
-<p class="text-2xl font-bold text-primary">€45.50</p>
-</div>
-<button class="w-full sm:w-auto flex items-center justify-center gap-2 py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-<span class="material-symbols-outlined text-lg">star</span>
-                                Guardar
-                            </button>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
-<div class="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-<div class="flex-grow grid grid-cols-2 sm:grid-cols-3 md:flex md:items-center gap-6 text-center sm:text-left">
-<div class="flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Salida</p>
-<p class="text-xl font-semibold text-gray-900 dark:text-white">10:00</p>
-</div>
-<div class="flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Llegada</p>
-<p class="text-xl font-semibold text-gray-900 dark:text-white">13:10</p>
-</div>
-<div class="col-span-2 sm:col-span-1 flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Duración</p>
-<p class="text-lg text-gray-700 dark:text-gray-300">3h 10m</p>
-</div>
-</div>
-<div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-gray-200 dark:border-gray-700 sm:pl-6">
-<div class="text-center sm:text-right">
-<p class="text-2xl font-bold text-primary">€52.00</p>
-</div>
-<button class="w-full sm:w-auto flex items-center justify-center gap-2 py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-<span class="material-symbols-outlined text-lg">star</span>
-                                Guardar
-                            </button>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
-<div class="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-<div class="flex-grow grid grid-cols-2 sm:grid-cols-3 md:flex md:items-center gap-6 text-center sm:text-left">
-<div class="flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Salida</p>
-<p class="text-xl font-semibold text-gray-900 dark:text-white">14:15</p>
-</div>
-<div class="flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Llegada</p>
-<p class="text-xl font-semibold text-gray-900 dark:text-white">17:30</p>
-</div>
-<div class="col-span-2 sm:col-span-1 flex-1">
-<p class="text-sm text-gray-500 dark:text-gray-400">Duración</p>
-<p class="text-lg text-gray-700 dark:text-gray-300">3h 15m</p>
-</div>
-</div>
-<div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-gray-200 dark:border-gray-700 sm:pl-6">
-<div class="text-center sm:text-right">
-<p class="text-2xl font-bold text-primary">€48.75</p>
-</div>
-<button class="w-full sm:w-auto flex items-center justify-center gap-2 py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-<span class="material-symbols-outlined text-lg">star</span>
-                                Guardar
-                            </button>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
-</div>
-</body></html>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" role="navigation" aria-label="Menú principal de navegación">
+      <div class="sidebar-content">
+        <!-- Logo and Title -->
+        <div class="logo-section">
+          <div class="logo-icon" role="img" aria-label="Icono de tren">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+          </div>
+          <h1 id="app-title" class="app-name">TrainApp</h1>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" aria-labelledby="app-title">
+          <a href="/inicioUsuario" 
+             class="nav-item"
+             aria-label="Ir a Inicio">
+            <span class="nav-icon" aria-hidden="true">🏠</span>
+            <span>Inicio</span>
+          </a>
+          <a href="/misViajes" 
+             class="nav-item"
+             aria-label="Ir a Mis Viajes">
+            <span class="nav-icon" aria-hidden="true">🎫</span>
+            <span>Mis Viajes</span>
+          </a>
+          <a href="/verRutas" 
+             class="nav-item active"
+             aria-current="page"
+             aria-label="Rutas, página actual">
+            <span class="nav-icon" aria-hidden="true">🗺️</span>
+            <span>Rutas</span>
+          </a>
+          <a href="/avisos" 
+             class="nav-item"
+             aria-label="Ir a Avisos del servicio">
+            <span class="nav-icon" aria-hidden="true">📢</span>
+            <span>Avisos</span>
+          </a>
+        </nav>
+
+        <!-- Logout Button -->
+        <button id="logoutBtn" 
+                class="logout-btn" 
+                aria-label="Cerrar sesión y salir de la aplicación">
+          Cerrar Sesión
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main" aria-labelledby="main-heading">
+      <div class="content-wrapper">
+        <!-- Page Header -->
+        <header class="page-header">
+          <h2 id="main-heading" class="page-title">Consulta de Rutas</h2>
+          <p class="page-subtitle">Encuentra tu próximo viaje en tren.</p>
+        </header>
+
+        <!-- Search Form -->
+        <section class="search-section" aria-labelledby="search-heading">
+          <h3 id="search-heading" class="sr-only">Formulario de búsqueda de rutas</h3>
+          <form id="searchForm" class="search-form" aria-label="Buscar rutas de tren">
+            <div class="form-row">
+              <!-- Origen -->
+              <div class="form-group">
+                <label for="origen" class="form-label">Origen</label>
+                <div class="input-with-icon">
+                  <span class="input-icon" aria-hidden="true">🚉</span>
+                  <input 
+                    type="text" 
+                    id="origen" 
+                    name="origen" 
+                    class="form-input"
+                    placeholder="Ciudad de salida"
+                    aria-label="Ciudad de origen del viaje"
+                    required>
+                </div>
+              </div>
+
+              <!-- Destino -->
+              <div class="form-group">
+                <label for="destino" class="form-label">Destino</label>
+                <div class="input-with-icon">
+                  <span class="input-icon" aria-hidden="true">🏁</span>
+                  <input 
+                    type="text" 
+                    id="destino" 
+                    name="destino" 
+                    class="form-input"
+                    placeholder="Ciudad de llegada"
+                    aria-label="Ciudad de destino del viaje"
+                    required>
+                </div>
+              </div>
+
+              <!-- Fecha -->
+              <div class="form-group">
+                <label for="fecha" class="form-label">Fecha</label>
+                <div class="input-with-icon">
+                  <span class="input-icon" aria-hidden="true">📅</span>
+                  <input 
+                    type="date" 
+                    id="fecha" 
+                    name="fecha" 
+                    class="form-input"
+                    aria-label="Fecha del viaje"
+                    required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Search Button -->
+            <button 
+              type="submit" 
+              class="search-btn"
+              aria-label="Buscar rutas de tren con los criterios seleccionados">
+              <span class="btn-icon" aria-hidden="true">🔍</span>
+              Buscar Rutas
+            </button>
+          </form>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" aria-labelledby="results-heading">
+          <h3 id="results-heading" class="section-title">Resultados de la Búsqueda</h3>
+          
+          <div class="results-list" role="list" aria-label="Lista de rutas disponibles">
+            <!-- Result Card 1 -->
+            <article class="result-card" role="listitem" aria-labelledby="route-1-summary">
+              <div class="route-info">
+                <div class="time-info">
+                  <div class="time-block">
+                    <span class="time-label">Salida</span>
+                    <span class="time-value">08:30</span>
+                  </div>
+                  <div class="time-block">
+                    <span class="time-label">Llegada</span>
+                    <span class="time-value">11:45</span>
+                  </div>
+                  <div class="time-block">
+                    <span class="time-label">Duración</span>
+                    <span class="duration-value">3h 15m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="route-actions">
+                <span class="price" aria-label="Precio del billete">€45.50</span>
+                <button 
+                  class="save-btn" 
+                  data-route-id="1"
+                  aria-pressed="false"
+                  aria-label="Guardar esta ruta en favoritos">
+                  <span class="btn-icon" aria-hidden="true">⭐</span>
+                  Guardar
+                </button>
+              </div>
+              <span id="route-1-summary" class="sr-only">Ruta de tren salida 08:30, llegada 11:45, duración 3 horas 15 minutos, precio 45 euros con 50 céntimos</span>
+            </article>
+
+            <!-- Result Card 2 -->
+            <article class="result-card" role="listitem" aria-labelledby="route-2-summary">
+              <div class="route-info">
+                <div class="time-info">
+                  <div class="time-block">
+                    <span class="time-label">Salida</span>
+                    <span class="time-value">10:00</span>
+                  </div>
+                  <div class="time-block">
+                    <span class="time-label">Llegada</span>
+                    <span class="time-value">13:10</span>
+                  </div>
+                  <div class="time-block">
+                    <span class="time-label">Duración</span>
+                    <span class="duration-value">3h 10m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="route-actions">
+                <span class="price" aria-label="Precio del billete">€52.00</span>
+                <button 
+                  class="save-btn" 
+                  data-route-id="2"
+                  aria-pressed="false"
+                  aria-label="Guardar esta ruta en favoritos">
+                  <span class="btn-icon" aria-hidden="true">⭐</span>
+                  Guardar
+                </button>
+              </div>
+              <span id="route-2-summary" class="sr-only">Ruta de tren salida 10:00, llegada 13:10, duración 3 horas 10 minutos, precio 52 euros</span>
+            </article>
+
+            <!-- Result Card 3 -->
+            <article class="result-card" role="listitem" aria-labelledby="route-3-summary">
+              <div class="route-info">
+                <div class="time-info">
+                  <div class="time-block">
+                    <span class="time-label">Salida</span>
+                    <span class="time-value">14:15</span>
+                  </div>
+                  <div class="time-block">
+                    <span class="time-label">Llegada</span>
+                    <span class="time-value">17:30</span>
+                  </div>
+                  <div class="time-block">
+                    <span class="time-label">Duración</span>
+                    <span class="duration-value">3h 15m</span>
+                  </div>
+                </div>
+              </div>
+              <div class="route-actions">
+                <span class="price" aria-label="Precio del billete">€48.75</span>
+                <button 
+                  class="save-btn" 
+                  data-route-id="3"
+                  aria-pressed="false"
+                  aria-label="Guardar esta ruta en favoritos">
+                  <span class="btn-icon" aria-hidden="true">⭐</span>
+                  Guardar
+                </button>
+              </div>
+              <span id="route-3-summary" class="sr-only">Ruta de tren salida 14:15, llegada 17:30, duración 3 horas 15 minutos, precio 48 euros con 75 céntimos</span>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/verRutas.js') }}"></script>
+</body>
+</html>

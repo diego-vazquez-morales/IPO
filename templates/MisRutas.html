@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/MisRutas.css') }}">
+    <script defer src="{{ url_for('static', filename='js/misRutas.js') }}"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 <nav class="nav-menu">
                     <a class="nav-item" href="#">
                         <span class="material-symbols-outlined">home</span>
-                        <span>Inicio de la aplicación</span>
+                        <span>Home</span>
                     </a>
                     <a class="nav-item" href="#">
                         <span class="material-symbols-outlined">luggage</span>
@@ -53,6 +54,12 @@
         
         <main class="main-content">
             <div class="content-wrapper">
+                <nav class="breadcrumb">
+                    <a href="#" class="breadcrumb-item">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item breadcrumb-current">Mis Rutas</span>
+                </nav>
+                
                 <h1 class="page-title">Mis Rutas Guardadas</h1>
                 
                 <div class="routes-container">
@@ -63,9 +70,9 @@
                                 <h2 class="route-title">Casa al Trabajo</h2>
                                 <p class="route-subtitle">Estación Central a Distrito Financiero</p>
                                 <div class="route-actions">
-                                    <button class="btn btn-primary">
+                                    <button class="btn btn-primary" id="verDetalles">
                                         <span class="material-symbols-outlined">schedule</span>
-                                        <span>Ver Horarios</span>
+                                        <span>Ver Detalles</span>
                                     </button>
                                     <button class="btn btn-delete">
                                         <span class="material-symbols-outlined">delete</span>
@@ -165,9 +172,9 @@
                                 <h2 class="route-title">Oficina a Ciudad Playa</h2>
                                 <p class="route-subtitle">Distrito Financiero a Costa del Sol</p>
                                 <div class="route-actions">
-                                    <button class="btn btn-secondary">
+                                    <button class="btn btn-primary">
                                         <span class="material-symbols-outlined">schedule</span>
-                                        <span>Ver Horarios</span>
+                                        <span>Ver Detalles</span>
                                     </button>
                                     <button class="btn btn-delete">
                                         <span class="material-symbols-outlined">delete</span>
@@ -186,9 +193,9 @@
                                 <h2 class="route-title">Viaje Familiar a Montaña</h2>
                                 <p class="route-subtitle">Estación Central a Villa Serrana</p>
                                 <div class="route-actions">
-                                    <button class="btn btn-secondary">
+                                    <button class="btn btn-primary">
                                         <span class="material-symbols-outlined">schedule</span>
-                                        <span>Ver Horarios</span>
+                                        <span>Ver Detalles</span>
                                     </button>
                                     <button class="btn btn-delete">
                                         <span class="material-symbols-outlined">delete</span>
