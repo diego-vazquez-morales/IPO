@@ -9,44 +9,43 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  
   <!-- Referencias externas a CSS y JS locales -->
   <script src="{{ url_for('static', filename='js/misViajes.js') }}"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/misViajes.css') }}">
+
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
   <div class="relative flex h-auto min-h-screen w-full flex-row">
-    <aside class="flex h-screen min-h-[700px] w-64 flex-col justify-between p-4 sticky top-0 bg-white">
+    <aside class="flex h-screen min-h-[700px] w-64 flex-col justify-between p-4 sticky top-0 bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-800">
       <div class="flex flex-col gap-4">
-        <div class="flex items-center justify-between gap-3">
-          <div class="flex items-center gap-3">
-            <div class="flex items-center justify-center size-10 rounded-full bg-white/20 text-black">
-              <span class="material-symbols-outlined logo-icon">train</span>
-            </div>
-            <h1 class="text-black text-lg font-bold leading-normal">TrainLife</h1>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center justify-center size-10 rounded-lg bg-primary text-white">
+            <span class="material-symbols-outlined logo-icon">train</span>
           </div>
+          <h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-normal">TrainLife</h1>
         </div>
         <nav class="flex flex-col gap-2 mt-4">
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black hover:bg-white/10" href="#">
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
             <span class="material-symbols-outlined">home</span>
             <p class="text-sm font-medium leading-normal">Inicio</p>
           </a>
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/20 text-black" href="#">
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary-light" href="#">
             <span class="material-symbols-outlined">confirmation_number</span>
             <p class="text-sm font-medium leading-normal">Mis Viajes</p>
           </a>
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black hover:bg-white/10" href="#">
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
             <span class="material-symbols-outlined">route</span>
             <p class="text-sm font-medium leading-normal">Rutas</p>
           </a>
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black hover:bg-white/10" href="#">
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
             <span class="material-symbols-outlined">notifications</span>
             <p class="text-sm font-medium leading-normal">Avisos</p>
           </a>
         </nav>
       </div>
       <div class="flex flex-col gap-1">
-        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-black hover:bg-white/10" href="#">
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
           <span class="material-symbols-outlined">logout</span>
           <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
         </a>
@@ -67,7 +66,6 @@
           </button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Tarjetas de viaje -->
           <div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
             <div class="flex flex-col gap-1 flex-1">
               <div class="inline-flex items-center gap-2 self-start rounded-full bg-green-500/10 dark:bg-green-500/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300 mb-2">
@@ -87,7 +85,7 @@
             <div class="flex flex-col gap-1 flex-1">
               <div class="inline-flex items-center gap-2 self-start rounded-full bg-orange-500/10 dark:bg-orange-500/20 px-2 py-1 text-xs font-medium text-orange-700 dark:text-orange-300 mb-2">
                 <span class="material-symbols-outlined text-sm">warning</span>
-                  Retrasado
+                Retrasado
               </div>
               <p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Sevilla → Valencia</p>
               <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">15 Nov, 2023 - 09:00h</p>
@@ -101,8 +99,8 @@
           <div class="flex flex-col p-4 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
             <div class="flex flex-col gap-1 flex-1">
               <div class="inline-flex items-center gap-2 self-start rounded-full bg-red-500/10 dark:bg-red-500/20 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300 mb-2">
-                <span class="material-symbols-outlined text-sm">cancel</span>
-                Cancelado
+                  <span class="material-symbols-outlined text-sm">cancel</span>
+                  Cancelado
               </div>
               <p class="text-gray-900 dark:text-gray-100 text-lg font-bold leading-tight">Bilbao → Madrid</p>
               <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">01 Oct, 2023 - 18:45h</p>

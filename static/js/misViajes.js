@@ -4,7 +4,7 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        "primary": "#0D47A1",
+        "primary": "#0D47A1", // Navy blue base
         "primary-light": "#1976D2",
         "background-light": "#F8F9FA",
         "background-dark": "#121212",
@@ -16,12 +16,7 @@ tailwind.config = {
       fontFamily: {
         "display": ["Space Grotesk", "sans-serif"]
       },
-      borderRadius: {
-        "DEFAULT": "0.25rem",
-        "lg": "0.5rem",
-        "xl": "0.75rem",
-        "full": "9999px"
-      },
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
     },
   },
 }
