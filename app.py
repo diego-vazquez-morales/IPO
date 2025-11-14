@@ -57,6 +57,10 @@ def viajesDetalles():
 def misRutas():
     return render_template('MisRutas.html')
 
+@app.route('/salir')
+def salir():
+    return render_template('salir.html')
+
 
 # Punto de entrada
 if __name__ == '__main__':
