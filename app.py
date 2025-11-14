@@ -57,9 +57,10 @@ def viajesDetalles():
 def misRutas():
     return render_template('MisRutas.html')
 
-@app.route('/configuracionNotificaciones')
-def configuracionNotificaciones():
-    return render_template('configuracionNotificaciones.html')
+@app.route('/salir')
+def salir():
+    return render_template('salir.html')
+
 
 # Punto de entrada
 if __name__ == '__main__':
