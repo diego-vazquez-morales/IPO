@@ -61,6 +61,10 @@ def misRutas():
 def salir():
     return render_template('salir.html')
 
+@app.route('/configuracionNotificaciones')
+def configuracionNotificaciones():
+    return render_template('configuracionNotificaciones.html')
+
 
 # Punto de entrada
 if __name__ == '__main__':
