@@ -1,10 +1,85 @@
 /* loginUsuario.css - estilos para loginUsuario.html */
-:root{--bg:#f7f7f9;--card:#fff;--accent:#1e88e5}
-body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:var(--bg);margin:0;color:#222}
-.container{max-width:960px;margin:32px auto;padding:16px}
-.login-card{background:var(--card);padding:24px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-.login-card h1{margin:0 0 12px;font-size:1.25rem}
-input[type="text"],input[type="password"]{width:100%;padding:8px 10px;margin:8px 0;border:1px solid #ddd;border-radius:4px}
-button.primary{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:4px;cursor:pointer}
-button.primary:active{transform:translateY(1px)}
-small.error{color:#c62828}
+:root {
+    --bg: #f7f7f9;
+    --card: #fff;
+    --accent: #1e88e5
+}
+
+body {
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    color: #222
+}
+
+.container {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 16px
+}
+
+.login-card {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08)
+}
+
+.login-card h1 {
+    margin: 0 0 12px;
+    font-size: 1.25rem
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px
+}
+
+
+button.primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+button.primary:active {
+    transform: translateY(1px)
+}
+
+small.error {
+    color: #c62828
+}
+
+/* Texto debajo del login */
+#registerText {
+    color: #0c0c0c; /* negro accesible */
+}
+
+.dark #registerText {
+    color: #cbd5e1; /* gris claro accesible sobre fondo dark */
+}
+
+/* Link */
+#registerLink,
+#registerLink:visited {
+    color: #2563EB; /* azul accesible */
+}
+
+/* Hover */
+#registerLink:hover,
+#registerLink:active {
+    color: #1E4FCB; /* azul ligeramente más oscuro */
+}
+
+/* Focus visible */
+#registerLink:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, .6);
+    border-radius: 2px;
+}
