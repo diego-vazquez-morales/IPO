@@ -61,9 +61,9 @@ def misRutas():
 def salir():
     return render_template('salir.html')
 
-@app.route('/configuracionNotificaciones')
-def configuracionNotificaciones():
-    return render_template('configuracionNotificaciones.html')
+@app.route('/configuracion')
+def configuracion():
+    return render_template('configuracion.html')
 
 
 # Punto de entrada
