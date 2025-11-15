@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TrainLife - Mi Perfil</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="../static/styles/Configuracion.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar" role="navigation" aria-label="Navegación principal">
+            <div class="sidebar-content">
+                <div class="logo-section">
+                    <span class="material-symbols-outlined logo-icon">train</span>
+                    <h1 class="logo-text">TrainLife</h1>
+                </div>
+                <nav class="nav-menu" aria-label="Menú de navegación">
+                    <a class="nav-item" href="#" aria-label="Ir a inicio">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                    <a class="nav-item" href="#" aria-label="Ir a mis viajes">
+                        <span class="material-symbols-outlined">luggage</span>
+                        <span>Mis viajes</span>
+                    </a>
+                    <a class="nav-item" href="#" aria-label="Ir a mis rutas">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span>Mis rutas</span>
+                    </a>
+                    <a class="nav-item" href="#" aria-label="Ver rutas disponibles">
+                        <span class="material-symbols-outlined">map</span>
+                        <span>Ver rutas</span>
+                    </a>
+                    <a class="nav-item active" href="#" aria-current="page" aria-label="Configuración (página actual)">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span>Configuración</span>
+                    </a>
+
+
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <a class="nav-item" href="#" aria-label="Cerrar sesión">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Cerrar Sesión</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="main-content" role="main" aria-label="Contenido principal">
+            <div class="content-wrapper">
+                <!-- PageHeading -->
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="#" class="breadcrumb-item" aria-label="Volver a inicio">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item breadcrumb-current">Configuración</span>
+                              
+                </nav>
+
+                <h1 class="page-title position-center">Configuración</h1>
+
+                <h2 class="page-second-title">Información Personal</h2>
+                <p class="page-subtitle">Aqui puedes ver y actualizar tu información personal.</p>
+                <!-- Form Container -->
+                <div class="card">
+                    <form class="form" aria-label="Formulario de información personal">
+                        <!-- TextField: Name -->
+                        <div class="form-group-full">
+                            <label class="form-label" for="nombre">Nombre</label>
+                            <input id="nombre" class="form-input" type="text" value="Ana" aria-required="true" aria-describedby="nombre-icon" />
+                            <span class="material-symbols-outlined label-icon" id="nombre-icon" aria-hidden="true">edit</span>
+                        </div>
+                        <div class="form-row">
+                            <!-- TextField: First Surname -->
+                            <div class="form-group">
+                                <label class="form-label" for="primer-apellido">Primer Apellido </label>
+                                <input id="primer-apellido" class="form-input" type="text" value="Martínez" aria-required="true" aria-describedby="primer-apellido-icon" />
+                                <span class="material-symbols-outlined label-icon" id="primer-apellido-icon" aria-hidden="true">edit</span>
+                            </div>
+                            <!-- TextField: Second Surname -->
+                            <div class="form-group">
+                                <label class="form-label" for="segundo-apellido">Segundo Apellido </label>
+                                <input id="segundo-apellido" class="form-input" type="text" value="García" aria-describedby="segundo-apellido-icon" />
+                                <span class="material-symbols-outlined label-icon" id="segundo-apellido-icon" aria-hidden="true">edit</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <!-- TextField: Phone Number -->
+                            <div class="form-group">
+                                <label class="form-label" for="telefono">Número de Teléfono </label>
+                                <input id="telefono" class="form-input" type="tel" value="+34 600 123 456" aria-required="true" aria-describedby="telefono-icon" />
+                                <span class="material-symbols-outlined label-icon" id="telefono-icon" aria-hidden="true">edit</span>
+                            </div>
+                            <!-- TextField: Email -->
+                            <div class="form-group">
+                                <label class="form-label" for="email">Correo Electrónico </label>
+                                <input id="email" class="form-input" type="email" value="ana.martinez@email.com" aria-required="true" aria-describedby="email-icon" />
+                                <span class="material-symbols-outlined label-icon" id="email-icon" aria-hidden="true">edit</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <h2 class="page-second-title">Configuración de Notificaciones</h2>
+                <p class="page-subtitle">Gestiona cómo y cuándo te notificamos sobre tus viajes y la aplicación.</p>
+
+                <div class="info-banner" role="note" aria-label="Información sobre notificaciones">
+                    <span class="material-symbols-outlined info-icon" aria-hidden="true">info</span>
+                    <p class="info-text">Para una mejor experiencia, te recomendamos mantener las notificaciones
+                        activas. Así recibirás información importante sobre tus viajes en tiempo real.</p>
+                </div>
+
+                <div class="settings-section" role="group" aria-labelledby="notif-viajes-rutas">
+                    <h2 class="section-title" id="notif-viajes-rutas">Notificaciones de Viajes y Rutas</h2>
+
+                    <div class="setting-item">
+                        <div class="setting-info" id="travel-label">
+                            <p class="setting-label">Modificaciones en mis viajes</p>
+                            <p class="setting-description">Recibe alertas sobre cambios, retrasos o cancelaciones.</p>
+                        </div>
+
+                        <div class="toggle-switch">
+                            <input type="checkbox" checked id="travel-toggle" aria-labelledby="travel-label" role="switch" aria-checked="true">
+                            <span class="toggle-slider" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="setting-divider"></div>
+                    <div class="setting-item">
+                        <div class="setting-info" id="route-label">
+                            <p class="setting-label">Modificaciones en mis rutas</p>
+                            <p class="setting-description">Notificaciones sobre cambios en tus rutas guardadas.</p>
+                        </div>
+
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="route-toggle" aria-labelledby="route-label" role="switch" aria-checked="false">
+                            <span class="toggle-slider" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="setting-divider"></div>
+                     <h2 class="section-title">Notificaciones Generales</h2>
+
+                    <div class="setting-item">
+                        <div class="setting-info" id="general-label">
+                            <p class="setting-label">Avisos generales de TrainLife</p>
+                            <p class="setting-description">Promociones, noticias y actualizaciones de la app.</p>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" checked id="general-toggle" aria-labelledby="general-label" role="switch" aria-checked="true">
+                            <span class="toggle-slider" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- Primary Button -->
+                <div class="button-container">
+                    <button class="btn-primary" type="submit" aria-label="Guardar todos los cambios realizados en la configuración">
+                        Guardar Cambios
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

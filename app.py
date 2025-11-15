@@ -61,6 +61,10 @@ def misRutas():
 def salir():
     return render_template('salir.html')
 
+@app.route('/configuracion')
+def configuracion():
+    return render_template('configuracion.html')
+
 
 # Punto de entrada
 if __name__ == '__main__':

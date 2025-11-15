@@ -1,188 +1,157 @@
 <!DOCTYPE html>
+<html lang="es">
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>TrainApp - Detalles del Viaje</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#137fec",
-              "background-light": "#f6f7f8",
-              "background-dark": "#101922",
-              "text-light": "#1A202C",
-              "text-dark": "#F5F7FA",
-              "accent-light": "#3182CE",
-              "accent-dark": "#3182CE",
-              "alert-yellow": "#D69E2E"
-            },
-            fontFamily: {
-              "display": ["Plus Jakarta Sans"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-          font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24
-        }
-    </style>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Detalles del Billete de Tren</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/styles/ViajesDetalles.css">
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-6 sm:px-10 py-3 bg-white dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10">
-<div class="flex items-center gap-4">
-<div class="size-6 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-xl font-bold tracking-[-0.015em]">TrainApp</h2>
-</div>
-<div class="flex flex-1 justify-end gap-2 sm:gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 gap-2 text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="material-symbols-outlined text-lg">notifications</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrrM8qcB1d73GEy0dD4uK-XDiMbBjyAWc8V87FLlnLBd5tJdnHZpnWW-1RPmj5U3mRdfBh8bh2ONbTDhluQgtloa7OipG164ImdAaEuWbHaQN42C_22OjPkR1Htq92ssVKk-8-RLGFUFMzColyK4nruw52i7U6ZteZum_Df15wasCKOY_2tbd10dfncQ0F3Rc4iWDWpEszzrIFmVNioSToOKNHr-G2jfq-5cw0vwB-EK8gqlS9VwtWHWY3OPqCiNUV3l-8a2BCVsA");'></div>
-</div>
-</header>
-<main class="flex-1 px-4 sm:px-8 md:px-10 lg:px-20 py-8">
-<div class="mx-auto flex max-w-4xl flex-col gap-8">
-<div class="flex flex-wrap gap-2 text-sm sm:text-base">
-<a class="text-accent-light dark:text-accent-dark font-medium" href="#">Mis Viajes</a>
-<span class="text-slate-500 dark:text-slate-400">/</span>
-<span class="font-medium text-text-light dark:text-text-dark">Madrid a Barcelona</span>
-</div>
-<div class="flex flex-col gap-6">
-<!-- Alert Banner -->
-<div class="flex flex-col items-stretch justify-start rounded-xl bg-alert-yellow text-slate-900 shadow-lg @container">
-<div class="flex w-full min-w-72 grow flex-col items-center justify-center gap-2 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-4xl">warning</span>
-<div>
-<p class="text-xl font-bold leading-tight tracking-[-0.015em]">¡Cambio de Andén!</p>
-<p class="text-base font-normal leading-normal">El tren ahora sale desde el andén 8</p>
-</div>
-</div>
-<p class="text-4xl font-black">Andén 8</p>
-</div>
-</div>
-<!-- Main Status Panel -->
-<div class="p-6 @container bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
-<div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
-<div class="text-center sm:text-left">
-<p class="text-slate-500 dark:text-slate-400 text-lg font-medium">Andén Original</p>
-<p class="text-6xl sm:text-7xl font-extrabold tracking-tighter text-text-light dark:text-text-dark line-through">5</p>
-</div>
-<div class="h-16 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
-<div class="text-center sm:text-left">
-<p class="text-slate-500 dark:text-slate-400 text-lg font-medium">Estado</p>
-<p class="text-2xl sm:text-3xl font-bold tracking-tight text-accent-light dark:text-accent-dark">Embarque próximo</p>
-</div>
-</div>
-</div>
-<!-- Notifications Toggle -->
-<div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 @container sm:flex-row sm:items-center">
-<div class="flex gap-4 items-center">
-<span class="material-symbols-outlined text-2xl text-accent-light">notifications_active</span>
-<div class="flex flex-col gap-1">
-<p class="font-bold leading-tight">Recibir notificaciones de este viaje</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">Recibe alertas sobre cambios de andén y retrasos.</p>
-</div>
-</div>
-<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full bg-slate-200 dark:bg-slate-700 p-0.5 has-[:checked]:bg-primary">
-<input checked="" class="invisible absolute" type="checkbox"/>
-<div class="h-full w-[27px] transform rounded-full bg-white shadow-md transition-transform duration-200" style="transform: translateX(20px);"></div>
-</label>
-</div>
-<!-- Itinerary Timeline -->
-<div>
-<h3 class="text-xl font-bold mb-4">Itinerario del Viaje</h3>
-<div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700 before:content-[''] before:left-0">
-<div class="relative flex items-center">
-<div class="z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shrink-0">
-<span class="material-symbols-outlined">train</span>
-</div>
-<div class="ml-6 flex-grow">
-<h4 class="font-bold">Madrid - P. de Atocha</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Salida: 14:30</p>
-</div>
-</div>
-<div class="relative flex items-center">
-<div class="z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-background-light dark:bg-background-dark shrink-0">
-<div class="h-2 w-2 rounded-full bg-primary"></div>
-</div>
-<div class="ml-6 flex-grow">
-<h4 class="font-bold">Zaragoza - Delicias</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Llegada: 15:52</p>
-</div>
-</div>
-<div class="relative flex items-center">
-<div class="z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark shrink-0">
-<div class="h-2 w-2 rounded-full bg-slate-400 dark:bg-slate-500"></div>
-</div>
-<div class="ml-6 flex-grow">
-<h4 class="font-semibold text-slate-500 dark:text-slate-400">Lleida Pirineus</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Llegada estimada: 16:40</p>
-</div>
-</div>
-<div class="relative flex items-center">
-<div class="z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark shrink-0">
-<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-xl">location_on</span>
-</div>
-<div class="ml-6 flex-grow">
-<h4 class="font-semibold text-slate-500 dark:text-slate-400">Barcelona - Sants</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Llegada estimada: 17:45</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Ticket Details -->
-<div>
-<h3 class="text-xl font-bold mb-4">Detalles del Billete</h3>
-<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Nº de Tren</p>
-<p class="text-lg font-bold">AVE 03143</p>
-</div>
-<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Coche</p>
-<p class="text-lg font-bold">4</p>
-</div>
-<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Asiento</p>
-<p class="text-lg font-bold">7A</p>
-</div>
-<div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Tarifa</p>
-<p class="text-lg font-bold">Básica</p>
-</div>
-</div>
-<div class="mt-4">
-<button class="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-primary/20 dark:bg-primary/30 px-5 py-3 text-sm font-bold text-primary dark:text-white hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
-<span class="material-symbols-outlined">qr_code_2</span>
-                                    Mostrar código QR
-                                </button>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</div>
-</body></html>
+
+<body>
+  <div class="layout-container">
+    <header class="header">
+      <div class="logo-container">
+        <span class="material-symbols-outlined logo-icon">train</span>
+        <h2 class="logo-text">TrainLife</h2>
+      </div>
+      <div class="nav-user">
+        <button class="notifications-btn">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <div class="user-avatar" data-alt="Avatar de usuario"></div>
+      </div>
+      <button class="menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </header>
+    <main class="main-content">
+      <div class="content-container">
+        <div class="breadcrumbs">
+          <a class="breadcrumb-item" href="#">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <a class="breadcrumb-item" href="#">Mis Viajes</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item">Madrid a Barcelona</span>
+        </div>
+
+        <div class="alert-warning" role="alert">
+          <span class="material-symbols-outlined alert-icon">warning</span>
+          <div class="alert-text-container">
+            <p class="alert-title">Cambio de Andén</p>
+            <p class="alert-message">Tu tren saldrá ahora desde el Andén 12.</p>
+          </div>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-header">
+            <div class="ticket-header-content">
+              <div class="route-info">
+                <p>25 Mayo 2024</p>
+                <h1>Madrid → Barcelona</h1>
+              </div>
+              <div class="train-info">
+                <p>AVE 3012</p>
+                <span class="status-tag">A tiempo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-body">
+            <div class="main-details">
+              <div class="time-details">
+                <div class="detail-box">
+                  <p class="detail-label">Andén</p>
+                  <p class="platform-number">12</p>
+                </div>
+                <div class="detail-box">
+                  <p class="detail-label">Salida</p>
+                  <p class="departure-time">14:30</p>
+                </div>
+              </div>
+
+              <div class="passenger-info">
+                <div class="info-item">
+                  <p class="info-label">Embarque</p>
+                  <p class="info-value">14:10</p>
+                </div>
+                <div class="info-item">
+                  <p class="info-label">Coche / Asiento</p>
+                  <p class="info-value">04 / 12A</p>
+                </div>
+                <div class="info-item">
+                  <p class="info-label">Clase</p>
+                  <p class="info-value">Turista</p>
+                </div>
+                <div class="info-item">
+                  <p class="info-label">Pasajero</p>
+                  <p class="info-value">Alex Doe</p>
+                </div>
+              </div>
+
+              <div class="notifications-toggle">
+                <div class="toggle-label-container">
+                  <span class="material-symbols-outlined toggle-icon">notifications_active</span>
+                  <span class="toggle-label">Notificaciones del viaje</span>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <div class="action-buttons">
+                <button class="action-btn primary-btn">
+                  <span class="material-symbols-outlined">download</span>
+                  Descargar PDF
+                </button>
+                <button class="action-btn secondary-btn">
+                  <span class="material-symbols-outlined">calendar_add_on</span>
+                  Añadir al Calendario
+                </button>
+                <button class="action-btn secondary-btn">
+                  <span class="material-symbols-outlined">share</span>
+                  Compartir Viaje
+                </button>
+              </div>
+            </div>
+
+            <div class="itinerary-container">
+              <h3>Itinerario del Viaje</h3>
+              <ul class="itinerary-list">
+                <li class="itinerary-item">
+                  <div class="itinerary-icon-box start-icon">
+                    <span class="material-symbols-outlined">train</span>
+                  </div>
+                  <p class="stop-name">Madrid - Puerta de Atocha</p>
+                  <p class="stop-time">Salida: 14:30 · Andén 12</p>
+                </li>
+                <li class="itinerary-item">
+                  <div class="itinerary-icon-box middle-icon">
+                    <span class="material-symbols-outlined">circle</span>
+                  </div>
+                  <p class="stop-name">Zaragoza - Delicias</p>
+                  <p class="stop-time">Llegada: 15:45 · Salida: 15:50</p>
+                </li>
+                <li class="itinerary-item">
+                  <div class="itinerary-icon-box end-icon">
+                    <span class="material-symbols-outlined">flag</span>
+                  </div>
+                  <p class="stop-name">Barcelona - Sants</p>
+                  <p class="stop-time">Llegada: 17:10</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

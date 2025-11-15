@@ -52,7 +52,7 @@ body {
 }
 
 .logo-icon {
-    color: #3b82f6;
+    color: #1049bd;
     font-size: 32px;
 }
 
@@ -82,11 +82,11 @@ body {
 }
 
 .nav-item:hover {
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgba(16, 73, 189, 0.1);
 }
 
 .nav-item.active {
-    background-color: #3b82f6;
+    background-color: #1049bd;
     color: #ffffff;
 }
 
@@ -112,6 +112,34 @@ body {
     margin: 0 auto;
 }
 
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.breadcrumb-item {
+    color: #0d3a94;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-item:hover {
+    transform: scale(1.1);
+}
+
+.breadcrumb-current {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #0d3a94;
+}
+
 .page-title {
     font-size: 32px;
     font-weight: 900;
@@ -135,8 +163,8 @@ body {
     border: 1px solid #e5e5e5;
 }
 
-.route-card-expanded {
-    border: 2px solid #3b82f6;
+.route-card-selected {
+    border: 2px solid #1049bd;
 }
 
 .route-header {
@@ -191,31 +219,32 @@ body {
 }
 
 .btn-primary {
-    background-color: #3b82f6;
+    background-color: #1049bd;
     color: #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #2563eb;
+    background-color: #0d3a94;
 }
 
 .btn-secondary {
-    background-color: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
+    background-color: rgba(16, 73, 189, 0.15);
+    color: #1049bd;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(59, 130, 246, 0.25);
+    background-color: rgba(16, 73, 189, 0.25);
 }
 
 .btn-delete {
-    background-color: transparent;
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    background-color: #ffffff;
+    color: #dc2626;
+    border: 1px solid #dc2626;
 }
 
 .btn-delete:hover {
-    background-color: rgba(239, 68, 68, 0.1);
+    background-color: #dc2626;
+    color: #ffffff;
 }
 
 /* Mapa de ruta */
@@ -246,9 +275,13 @@ body {
     margin-top: 24px;
     padding-top: 24px;
     border-top: 1px solid #e5e5e5;
-    display: flex;
     flex-direction: column;
     gap: 24px;
+    display: none;
+}
+
+.route-details-expanded {
+    display: flex;
 }
 
 .transfers-badge {

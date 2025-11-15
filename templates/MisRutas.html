@@ -10,81 +10,88 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/MisRutas.css') }}">
+    <script defer src="{{ url_for('static', filename='js/misRutas.js') }}"></script>
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar">
+        <aside class="sidebar" role="navigation" aria-label="Navegación principal">
             <div class="sidebar-content">
                 <div class="logo-section">
                     <span class="material-symbols-outlined logo-icon">train</span>
                     <h1 class="logo-text">TrainLife</h1>
                 </div>
-                <nav class="nav-menu">
-                    <a class="nav-item" href="#">
-                        <span class="material-symbols-outlined">home</span>
-                        <span>Inicio de la aplicación</span>
+                <nav class="nav-menu" aria-label="Menú de navegación">
+                    <a class="nav-item" href="#" aria-label="Ir a inicio">
+                        <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                        <span>Home</span>
                     </a>
-                    <a class="nav-item" href="#">
-                        <span class="material-symbols-outlined">luggage</span>
+                    <a class="nav-item" href="#" aria-label="Ir a mis viajes">
+                        <span class="material-symbols-outlined" aria-hidden="true">luggage</span>
                         <span>Mis viajes</span>
                     </a>
-                    <a class="nav-item" href="#">
-                        <span class="material-symbols-outlined">tune</span>
-                        <span>Mis preferencias</span>
-                    </a>
-                    <a class="nav-item active" href="#">
-                        <span class="material-symbols-outlined icon-filled">star</span>
+                    <a class="nav-item active" href="#" aria-current="page" aria-label="Mis rutas (página actual)">
+                        <span class="material-symbols-outlined icon-filled" aria-hidden="true">star</span>
                         <span>Mis rutas</span>
                     </a>
-                    <a class="nav-item" href="#">
-                        <span class="material-symbols-outlined">map</span>
+                    <a class="nav-item" href="#" aria-label="Ver rutas disponibles">
+                        <span class="material-symbols-outlined" aria-hidden="true">map</span>
                         <span>Ver rutas</span>
+                    </a>
+                                        <a class="nav-item" href="#" aria-label="Ir a mis preferencias">
+                        <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+                        <span>configuración</span>
                     </a>
                 </nav>
             </div>
             <div class="sidebar-footer">
-                <a class="nav-item" href="#">
-                    <span class="material-symbols-outlined">logout</span>
+                <a class="nav-item" href="#" aria-label="Cerrar sesión">
+                    <span class="material-symbols-outlined" aria-hidden="true">logout</span>
                     <span>Cerrar Sesión</span>
                 </a>
             </div>
         </aside>
         
-        <main class="main-content">
+        <main class="main-content" role="main" aria-label="Contenido principal">
             <div class="content-wrapper">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="#" class="breadcrumb-item" aria-label="Volver a inicio">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-item breadcrumb-current">Mis Rutas</span>
+                </nav>
+                
                 <h1 class="page-title">Mis Rutas Guardadas</h1>
                 
-                <div class="routes-container">
+                <div class="routes-container" role="list" aria-label="Lista de rutas guardadas">
                     <!-- Ruta 1: Casa al Trabajo (Expandida) -->
-                    <div class="route-card route-card-expanded">
+                    <div class="route-card route-card-expanded" role="listitem" aria-labelledby="route-1-title">
                         <div class="route-header">
                             <div class="route-info">
-                                <h2 class="route-title">Casa al Trabajo</h2>
+                                <h2 class="route-title" id="route-1-title">Casa al Trabajo</h2>
                                 <p class="route-subtitle">Estación Central a Distrito Financiero</p>
                                 <div class="route-actions">
-                                    <button class="btn btn-primary">
-                                        <span class="material-symbols-outlined">schedule</span>
-                                        <span>Ver Horarios</span>
+                                    <button class="btn btn-primary" id="verDetalles" aria-expanded="true" aria-controls="route-1-details" aria-label="Ver detalles de la ruta Casa al Trabajo">
+                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                                        <span>Ver Detalles</span>
                                     </button>
-                                    <button class="btn btn-delete">
-                                        <span class="material-symbols-outlined">delete</span>
+                                    <button class="btn btn-delete" aria-label="Eliminar ruta Casa al Trabajo de favoritos">
+                                        <span class="material-symbols-outlined" aria-hidden="true">delete</span>
                                         <span>Eliminar de favoritos</span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="route-map route-map-main"></div>
+                            <div class="route-map route-map-main" role="img" aria-label="Mapa de la ruta desde Estación Central a Distrito Financiero"></div>
                         </div>
                         
-                        <div class="route-details">
-                            <div class="transfers-badge">
+                        <div class="route-details" id="route-1-details" role="region" aria-label="Detalles de la ruta Casa al Trabajo">id="route-1-details" role="region" aria-label="Detalles de la ruta Casa al Trabajo">
+                            <div class="transfers-badge" role="note" aria-label="Número de transbordos">
                                 <span class="transfers-label">Transbordos:</span>
-                                <span class="transfers-count">2</span>
+                                <span class="transfers-count" aria-label="2 transbordos">2</span>
                             </div>
                             
                             <!-- Línea 1 -->
-                            <div class="line-section">
-                                <h3 class="line-title">Línea 1 (Roja)</h3>
+                            <div class="line-section" role="region" aria-labelledby="line-1-title">
+                                <h3 class="line-title" id="line-1-title">Línea 1 (Roja)</h3>
                                 <div class="line-content">
                                     <div class="line-info-grid">
                                         <div class="info-item">
@@ -114,14 +121,14 @@
                                     </div>
                                     <div class="line-image-container">
                                         <span class="image-label">Imagen del Trayecto de la Línea</span>
-                                        <div class="line-route-image line-route-image-1"></div>
+                                        <div class="line-route-image line-route-image-1" role="img" aria-label="Mapa del trayecto de la Línea 1 (Roja) desde Estación Central a Estación Intermedia"></div>
                                     </div>
                                 </div>
                             </div>
                             
                             <!-- Línea 2 -->
-                            <div class="line-section">
-                                <h3 class="line-title">Línea 2 (Azul)</h3>
+                            <div class="line-section" role="region" aria-labelledby="line-2-title">
+                                <h3 class="line-title" id="line-2-title">Línea 2 (Azul)</h3>
                                 <div class="line-content">
                                     <div class="line-info-grid">
                                         <div class="info-item">
@@ -151,7 +158,7 @@
                                     </div>
                                     <div class="line-image-container">
                                         <span class="image-label">Imagen del Trayecto de la Línea</span>
-                                        <div class="line-route-image line-route-image-2"></div>
+                                        <div class="line-route-image line-route-image-2" role="img" aria-label="Mapa del trayecto de la Línea 2 (Azul) desde Estación Intermedia a Distrito Financiero"></div>
                                     </div>
                                 </div>
                             </div>
@@ -159,44 +166,44 @@
                     </div>
                     
                     <!-- Ruta 2: Oficina a Ciudad Playa -->
-                    <div class="route-card">
+                    <div class="route-card" role="listitem" aria-labelledby="route-2-title">
                         <div class="route-header">
                             <div class="route-info">
-                                <h2 class="route-title">Oficina a Ciudad Playa</h2>
+                                <h2 class="route-title" id="route-2-title">Oficina a Ciudad Playa</h2>
                                 <p class="route-subtitle">Distrito Financiero a Costa del Sol</p>
                                 <div class="route-actions">
-                                    <button class="btn btn-secondary">
-                                        <span class="material-symbols-outlined">schedule</span>
-                                        <span>Ver Horarios</span>
+                                    <button class="btn btn-primary" aria-expanded="false" aria-label="Ver detalles de la ruta Oficina a Ciudad Playa">
+                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                                        <span>Ver Detalles</span>
                                     </button>
-                                    <button class="btn btn-delete">
-                                        <span class="material-symbols-outlined">delete</span>
+                                    <button class="btn btn-delete" aria-label="Eliminar ruta Oficina a Ciudad Playa de favoritos">
+                                        <span class="material-symbols-outlined" aria-hidden="true">delete</span>
                                         <span>Eliminar de favoritos</span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="route-map route-map-beach"></div>
+                            <div class="route-map route-map-beach" role="img" aria-label="Mapa de la ruta desde Distrito Financiero a Costa del Sol"></div>
                         </div>
                     </div>
                     
                     <!-- Ruta 3: Viaje Familiar a Montaña -->
-                    <div class="route-card">
+                    <div class="route-card" role="listitem" aria-labelledby="route-3-title">
                         <div class="route-header">
                             <div class="route-info">
-                                <h2 class="route-title">Viaje Familiar a Montaña</h2>
+                                <h2 class="route-title" id="route-3-title">Viaje Familiar a Montaña</h2>
                                 <p class="route-subtitle">Estación Central a Villa Serrana</p>
                                 <div class="route-actions">
-                                    <button class="btn btn-secondary">
-                                        <span class="material-symbols-outlined">schedule</span>
-                                        <span>Ver Horarios</span>
+                                    <button class="btn btn-primary" aria-expanded="false" aria-label="Ver detalles de la ruta Viaje Familiar a Montaña">
+                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                                        <span>Ver Detalles</span>
                                     </button>
-                                    <button class="btn btn-delete">
-                                        <span class="material-symbols-outlined">delete</span>
+                                    <button class="btn btn-delete" aria-label="Eliminar ruta Viaje Familiar a Montaña de favoritos">
+                                        <span class="material-symbols-outlined" aria-hidden="true">delete</span>
                                         <span>Eliminar de favoritos</span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="route-map route-map-mountain"></div>
+                            <div class="route-map route-map-mountain" role="img" aria-label="Mapa de la ruta desde Estación Central a Villa Serrana"></div>
                         </div>
                     </div>
                 </div>
