@@ -65,6 +65,10 @@ def salir():
 def configuracion():
     return render_template('configuracion.html')
 
+@app.route('/alertas')
+def alertas():
+    return render_template('alertas.html')
+
 
 # Punto de entrada
 if __name__ == '__main__':
