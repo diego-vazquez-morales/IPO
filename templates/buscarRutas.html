@@ -9,7 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/verRutas.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/buscarRutas.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/confirmModal.css') }}">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,7 +23,7 @@
         </button>
 
         <!-- Sidebar -->
-        <aside class="sidebar" role="navigation" aria-label="Menú de navegación principal">
+        <aside class="sidebar">
             <div class="sidebar-content">
                 <!-- Logo -->
                 <div class="logo-section">
@@ -44,11 +45,11 @@
                         <i data-lucide="map-pin"></i>
                         <span>Mis Rutas</span>
                     </a>
-                    <a href="/verRutas" class="nav-item active" aria-current="page" aria-label="Buscar Rutas - Página actual">
+                    <a href="/buscarRutas" class="nav-item active">
                         <i data-lucide="search"></i>
                         <span>Buscar Rutas</span>
                     </a>
-                    <a href="/alertas" class="nav-item">
+                    <a href="/notificaciones" class="nav-item">
                         <i data-lucide="bell"></i>
                         <span>Notificaciones</span>
                     </a>
@@ -67,7 +68,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content" role="main" aria-label="Contenido principal">
+        <main class="main-content">
             <div class="content-wrapper">
                 <!-- Breadcrumbs -->
                 <nav class="breadcrumbs" aria-label="breadcrumb">
@@ -84,21 +85,22 @@
 
                 <!-- Search Form -->
                 <section class="search-form-section">
-                    <form id="searchForm" class="search-form" role="form" aria-label="Formulario de búsqueda de rutas">
+                    <form id="searchForm" class="search-form" role="search" aria-label="Buscar rutas de tren">
                         <div class="form-grid">
                             <!-- Origen -->
                             <div class="form-group">
                                 <label for="origen" class="form-label">Origen</label>
                                 <div class="input-wrapper">
-                                    <i data-lucide="map-pin" class="input-icon" aria-hidden="true"></i>
+                                    <i data-lucide="map-pin" class="input-icon"></i>
                                     <input
                                         type="text"
                                         id="origen"
                                         name="origen"
                                         class="form-input"
                                         placeholder="Parada de salida"
-                                        required
+                                        aria-label="Estación de origen"
                                         aria-required="true"
+                                        required
                                     >
                                 </div>
                             </div>
@@ -107,15 +109,16 @@
                             <div class="form-group">
                                 <label for="destino" class="form-label">Destino</label>
                                 <div class="input-wrapper">
-                                    <i data-lucide="map-pin" class="input-icon" aria-hidden="true"></i>
+                                    <i data-lucide="map-pin" class="input-icon"></i>
                                     <input
                                         type="text"
                                         id="destino"
                                         name="destino"
                                         class="form-input"
-                                        placeholder="Parada de llegada"
-                                        required
+                                        placeholder="Parada de destino"
+                                        aria-label="Estación de destino"
                                         aria-required="true"
+                                        required
                                     >
                                 </div>
                             </div>
@@ -124,14 +127,13 @@
                             <div class="form-group">
                                 <label for="fecha" class="form-label">Fecha</label>
                                 <div class="input-wrapper">
-                                    <i data-lucide="calendar" class="input-icon" aria-hidden="true"></i>
+                                    <i data-lucide="calendar" class="input-icon"></i>
                                     <input
                                         type="date"
                                         id="fecha"
                                         name="fecha"
                                         class="form-input"
                                         required
-                                        aria-required="true"
                                     >
                                 </div>
                             </div>
@@ -190,6 +192,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Custom JavaScript -->
-    <script src="{{ url_for('static', filename='js/verRutas.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/confirmModal.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/buscarRutas.js') }}"></script>
 </body>
 </html>

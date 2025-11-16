@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     
-    <link rel="stylesheet" href="../static/styles/inicioAplicación.css"/>
+    <link rel="stylesheet" href="../static/styles/home.css"/>
 
 </head>
 <body class="page-body">
     <div class="main-root">
         <div class="hero-section" data-alt="High-speed train on a modern railway track with a dark blue overlay">
-            <header class="page-header">
-                <div class="logo-container">
+            <header class="page-header" role="banner">
+                <div class="logo-container" aria-label="TrainLife Logo">
                     <div class="logo-icon-wrap">
                         <span class="material-symbols-outlined logo-icon">train</span>
                         <div class="logo-line"></div>
@@ -23,13 +23,13 @@
                     <span class="logo-text">TrainLife</span>
                 </div>
             </header>
-            <main class="page-main">
+            <main class="page-main" role="main" aria-label="Contenido principal">
                 <div class="hero-content">
                     <h1 class="hero-title">Tu viaje comienza aquí</h1>
                     <h2 class="hero-subtitle">Consulta horarios en tiempo real y gestiona tus billetes de alta velocidad de forma eficiente y segura.</h2>
                 </div>
-                <button class="primary-button">
-                    <a class="truncate-text" href="./loginUsuario.html">Iniciar sesión</a>
+                <button class="primary-button" aria-label="Ir a iniciar sesión">
+                    <a class="truncate-text" href="./login" aria-label="Iniciar sesión en TrainLife">Iniciar sesión</a>
                 </button>
             </main>
         </div>

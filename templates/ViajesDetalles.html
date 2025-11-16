@@ -1,157 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Detalles del Billete de Tren</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="../static/styles/ViajesDetalles.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TrainLife - Detalles del Viaje</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    
+    <!-- Lucide Icons CSS -->
+    <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/ViajesDetalles.css') }}"/>
 </head>
-
 <body>
-  <div class="layout-container">
-    <header class="header">
-      <div class="logo-container">
-        <span class="material-symbols-outlined logo-icon">train</span>
-        <h2 class="logo-text">TrainLife</h2>
-      </div>
-      <div class="nav-user">
-        <button class="notifications-btn">
-          <span class="material-symbols-outlined">notifications</span>
-        </button>
-        <div class="user-avatar" data-alt="Avatar de usuario"></div>
-      </div>
-      <button class="menu-btn">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-    </header>
-    <main class="main-content">
-      <div class="content-container">
-        <div class="breadcrumbs">
-          <a class="breadcrumb-item" href="#">Home</a>
-          <span class="breadcrumb-separator">/</span>
-          <a class="breadcrumb-item" href="#">Mis Viajes</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-item">Madrid a Barcelona</span>
-        </div>
-
-        <div class="alert-warning" role="alert">
-          <span class="material-symbols-outlined alert-icon">warning</span>
-          <div class="alert-text-container">
-            <p class="alert-title">Cambio de Andén</p>
-            <p class="alert-message">Tu tren saldrá ahora desde el Andén 12.</p>
-          </div>
-        </div>
-
-        <div class="ticket-card">
-          <div class="ticket-header">
-            <div class="ticket-header-content">
-              <div class="route-info">
-                <p>25 Mayo 2024</p>
-                <h1>Madrid → Barcelona</h1>
-              </div>
-              <div class="train-info">
-                <p>AVE 3012</p>
-                <span class="status-tag">A tiempo</span>
-              </div>
+    <div class="page-container">
+        <!-- Header - Solo visible en desktop -->
+        <header class="page-header" role="banner">
+            <div class="logo-container">
+                <i data-lucide="train" class="logo-icon" aria-hidden="true"></i>
+                <div class="logo-title">TrainLife</div>
             </div>
-          </div>
+        </header>
 
-          <div class="ticket-body">
-            <div class="main-details">
-              <div class="time-details">
-                <div class="detail-box">
-                  <p class="detail-label">Andén</p>
-                  <p class="platform-number">12</p>
-                </div>
-                <div class="detail-box">
-                  <p class="detail-label">Salida</p>
-                  <p class="departure-time">14:30</p>
-                </div>
-              </div>
+        <!-- Main Content -->
+        <main class="main-container" role="main" aria-label="Detalles del viaje">
+            <div class="content-wrapper">
+                <!-- Page Title (visually hidden but accessible) -->
+                <h1 class="sr-only">Detalles del Viaje</h1>
+                
+                <!-- Breadcrumbs -->
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <a href="/homeUsuario" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="/Viajes" class="breadcrumb-link">Viajes</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="/misViajes" class="breadcrumb-link">Mis Viajes</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current" id="breadcrumbRuta">Madrid - Barcelona</span>
+                </nav>
 
-              <div class="passenger-info">
-                <div class="info-item">
-                  <p class="info-label">Embarque</p>
-                  <p class="info-value">14:10</p>
+                <!-- Alert Warning -->
+                <div class="alert-box" id="alertBox" style="display: none;" role="alert" aria-live="assertive">
+                    <i data-lucide="alert-triangle" class="alert-icon" aria-hidden="true"></i>
+                    <div class="alert-content">
+                        <p class="alert-title" id="alertTitle">Alerta</p>
+                        <p class="alert-message" id="alertMessage">Información del viaje</p>
+                    </div>
                 </div>
-                <div class="info-item">
-                  <p class="info-label">Coche / Asiento</p>
-                  <p class="info-value">04 / 12A</p>
-                </div>
-                <div class="info-item">
-                  <p class="info-label">Clase</p>
-                  <p class="info-value">Turista</p>
-                </div>
-                <div class="info-item">
-                  <p class="info-label">Pasajero</p>
-                  <p class="info-value">Alex Doe</p>
-                </div>
-              </div>
 
-              <div class="notifications-toggle">
-                <div class="toggle-label-container">
-                  <span class="material-symbols-outlined toggle-icon">notifications_active</span>
-                  <span class="toggle-label">Notificaciones del viaje</span>
-                </div>
-                <label class="switch">
-                  <input type="checkbox" checked>
-                  <span class="slider"></span>
-                </label>
-              </div>
+                <!-- Ticket Card -->
+                <div class="ticket-card" role="article" aria-label="Información del billete de tren">
+                    <!-- Ticket Header -->
+                    <div class="ticket-header">
+                        <div class="ticket-header-content">
+                            <div class="ticket-left">
+                                <p class="ticket-date" id="ticketDate">Fecha</p>
+                                <h2 class="ticket-route" id="ticketRoute">Ruta</h2>
+                            </div>
+                            <div class="ticket-right">
+                                <p class="ticket-train" id="ticketTrain">Tren</p>
+                                <span class="status-badge" id="statusBadge">Estado</span>
+                            </div>
+                        </div>
+                    </div>
 
-              <div class="action-buttons">
-                <button class="action-btn primary-btn">
-                  <span class="material-symbols-outlined">download</span>
-                  Descargar PDF
-                </button>
-                <button class="action-btn secondary-btn">
-                  <span class="material-symbols-outlined">calendar_add_on</span>
-                  Añadir al Calendario
-                </button>
-                <button class="action-btn secondary-btn">
-                  <span class="material-symbols-outlined">share</span>
-                  Compartir Viaje
-                </button>
-              </div>
+                    <!-- Ticket Body -->
+                    <div class="ticket-body">
+                        <div class="ticket-grid">
+                            <!-- Left Column - Main Details -->
+                            <div class="main-details-col">
+                                <!-- Time Details Grid -->
+                                <div class="time-details-grid">
+                                    <!-- Platform Box -->
+                                    <div class="detail-box detail-box-platform">
+                                        <div class="detail-label">Andén</div>
+                                        <div class="detail-value-large" id="platform">--</div>
+                                    </div>
+                                    
+                                    <!-- Departure Box -->
+                                    <div class="detail-box">
+                                        <div class="detail-label">Salida</div>
+                                        <div class="detail-value-medium" id="departure">--:--</div>
+                                    </div>
+                                </div>
+
+                                <!-- Passenger Info Grid -->
+                                <div class="passenger-info-grid">
+                                    <div class="info-item">
+                                        <p class="info-label">Embarque</p>
+                                        <p class="info-value" id="boarding">--:--</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">Coche / Asiento</p>
+                                        <p class="info-value" id="seatInfo">-- / --</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">Clase</p>
+                                        <p class="info-value" id="class">--</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <p class="info-label">Pasajero</p>
+                                        <p class="info-value" id="passenger">--</p>
+                                    </div>
+                                </div>
+
+                                <!-- Notifications Toggle -->
+                                <div class="notifications-toggle">
+                                    <label for="notificationsToggle" class="toggle-label-wrapper">
+                                        <i data-lucide="bell" class="toggle-icon" aria-hidden="true"></i>
+                                        <span class="toggle-label" id="toggleLabel">Notificaciones del viaje</span>
+                                    </label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="notificationsToggle" checked role="switch" aria-checked="true" aria-labelledby="toggleLabel"/>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column - Itinerary -->
+                            <div class="itinerary-col">
+                                <h3 class="itinerary-title" id="itineraryTitle">Itinerario del Viaje</h3>
+                                <ul class="itinerary-list" id="itineraryList" role="list" aria-labelledby="itineraryTitle">
+                                    <!-- Items will be added by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </main>
+    </div>
 
-            <div class="itinerary-container">
-              <h3>Itinerario del Viaje</h3>
-              <ul class="itinerary-list">
-                <li class="itinerary-item">
-                  <div class="itinerary-icon-box start-icon">
-                    <span class="material-symbols-outlined">train</span>
-                  </div>
-                  <p class="stop-name">Madrid - Puerta de Atocha</p>
-                  <p class="stop-time">Salida: 14:30 · Andén 12</p>
-                </li>
-                <li class="itinerary-item">
-                  <div class="itinerary-icon-box middle-icon">
-                    <span class="material-symbols-outlined">circle</span>
-                  </div>
-                  <p class="stop-name">Zaragoza - Delicias</p>
-                  <p class="stop-time">Llegada: 15:45 · Salida: 15:50</p>
-                </li>
-                <li class="itinerary-item">
-                  <div class="itinerary-icon-box end-icon">
-                    <span class="material-symbols-outlined">flag</span>
-                  </div>
-                  <p class="stop-name">Barcelona - Sants</p>
-                  <p class="stop-time">Llegada: 17:10</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/ViajesDetalles.js') }}"></script>
 </body>
-
 </html>

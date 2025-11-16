@@ -1,8 +1,8 @@
-/* inicioAplicación.js
-   Script para inicioAplicación.html
+/* home.js
+   Script para home.html
 */
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('inicioAplicación.js cargado');
+  console.log('home.js cargado');
   // comportamiento común del dashboard
 });

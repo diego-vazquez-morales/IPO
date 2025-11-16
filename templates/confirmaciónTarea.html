@@ -40,18 +40,18 @@
 <div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
 <!-- Main page content (blurred and under the modal) -->
 <div class="absolute inset-0 z-0 flex h-full grow flex-col filter blur-sm">
-<header class="flex h-16 shrink-0 items-center justify-between px-6 border-b border-gray-200 dark:border-gray-800">
+<header class="flex h-16 shrink-0 items-center justify-between px-6 border-b border-gray-200 dark:border-gray-800" role="banner">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">train</span>
 <h1 class="font-bold text-lg text-gray-900 dark:text-gray-100">TrainApp</h1>
 </div>
-<nav class="flex items-center gap-6 text-sm font-medium">
+<nav class="flex items-center gap-6 text-sm font-medium" role="navigation" aria-label="Menú principal">
 <a class="text-gray-600 dark:text-gray-400" href="#">Rutas</a>
 <a class="text-gray-600 dark:text-gray-400" href="#">Billetes</a>
 <a class="text-gray-600 dark:text-gray-400" href="#">Perfil</a>
 </nav>
 </header>
-<main class="flex-1 p-6">
+<main class="flex-1 p-6" role="main">
 <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">Mis Rutas Favoritas</h2>
 <div class="mt-4 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 <div class="p-4 rounded-lg bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
@@ -68,20 +68,20 @@
 <!-- Modal Overlay -->
 <div class="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-gray-900/60 dark:bg-black/70 p-4">
 <!-- Modal Container -->
-<div class="layout-content-container flex flex-col max-w-sm w-full flex-1 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl p-6 md:p-8 text-center items-center">
+<div class="layout-content-container flex flex-col max-w-sm w-full flex-1 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl p-6 md:p-8 text-center items-center" role="dialog" aria-modal="true" aria-labelledby="modal-title">
 <!-- Icon -->
 <div class="flex items-center justify-center w-20 h-20 bg-primary/20 rounded-full mb-6">
 <div class="flex items-center justify-center w-14 h-14 bg-primary rounded-full">
-<span class="material-symbols-outlined text-4xl text-black">check</span>
+<span class="material-symbols-outlined text-4xl text-black" aria-hidden="true">check</span>
 </div>
 </div>
 <!-- HeadlineText -->
-<h2 class="text-gray-900 dark:text-gray-50 tracking-tight text-2xl font-bold leading-tight pb-2">¡Cambios Guardados!</h2>
+<h2 class="text-gray-900 dark:text-gray-50 tracking-tight text-2xl font-bold leading-tight pb-2" id="modal-title">¡Cambios Guardados!</h2>
 <!-- BodyText -->
 <p class="text-gray-700 dark:text-gray-300 text-base font-normal leading-normal pb-6">Tu ruta favorita ha sido actualizada correctamente.</p>
 <!-- SingleButton -->
 <div class="flex w-full py-2 justify-center">
-<button class="flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-gray-900 text-base font-bold leading-normal tracking-[0.015em]">
+<button class="flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-gray-900 text-base font-bold leading-normal tracking-[0.015em]" aria-label="Aceptar y cerrar el diálogo de confirmación">
 <span class="truncate">Aceptar</span>
 </button>
 </div>

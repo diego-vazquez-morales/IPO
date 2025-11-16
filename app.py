@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def inicioAplicacion():
+def home():
     """Ruta raíz: mostrar la pantalla de inicio de la aplicación."""
-    return render_template('inicioAplicación.html')
+    return render_template('home.html')
 
 
 
@@ -23,19 +23,24 @@ def crearUsuario():
     return render_template('crearUsuario.html')
 
 
-@app.route('/inicioUsuario')
-def inicioUsuario():
-    return render_template('inicioUsuario.html')
+@app.route('/homeUsuario')
+def home_usuario():
+    return render_template('homeUsuario.html')
 
 
-@app.route('/loginUsuario')
-def loginUsuario():
-    return render_template('loginUsuario.html')
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 
 @app.route('/misViajes')
 def misViajes():
-    return render_template('misViajes.html')
+    return render_template('MisViajes.html')
+
+
+@app.route('/Viajes')
+def viajes():
+    return render_template('Viajes.html')
 
 
 @app.route('/PreferenciasNotificaciones')
@@ -43,9 +48,9 @@ def preferenciasNotificaciones():
     return render_template('PreferenciasNotificaciones.html')
 
 
-@app.route('/verRutas')
-def verRutas():
-    return render_template('verRutas.html')
+@app.route('/buscarRutas')
+def buscarRutas():
+    return render_template('buscarRutas.html')
 
 
 @app.route('/ViajesDetalles')
@@ -65,9 +70,13 @@ def salir():
 def configuracion():
     return render_template('configuracion.html')
 
-@app.route('/alertas')
-def alertas():
-    return render_template('alertas.html')
+@app.route('/notificaciones')
+def notificaciones():
+    return render_template('notificaciones.html')
+
+@app.route('/modal-demo')
+def modal_demo():
+    return render_template('modalDemo.html')
 
 
 # Punto de entrada

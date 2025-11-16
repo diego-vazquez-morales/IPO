@@ -1,5 +1,5 @@
-/* loginUsuario.js
-   Script de interacción para loginUsuario.html
+/* login.js
+   Script de interacción para login.html
    Incluye validación de formulario, toggle de contraseña y navegación
 */
 
@@ -15,7 +15,7 @@ let hasError = false;
 
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('loginUsuario.js cargado');
+  console.log('login.js cargado');
   
   // Inicializar iconos de Lucide
   if (typeof lucide !== 'undefined') {
@@ -161,8 +161,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Añadir clase de error a los inputs
     if (emailInput) {
       emailInput.classList.add('is-invalid');
-      emailInput.setAttribute('aria-invalid', 'true');
-      emailInput.setAttribute('aria-describedby', 'errorMessage');
       const emailWrapper = emailInput.closest('.input-icon-wrapper');
       if (emailWrapper) {
         emailWrapper.classList.add('is-invalid');
@@ -171,8 +169,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     if (passwordInput) {
       passwordInput.classList.add('is-invalid');
-      passwordInput.setAttribute('aria-invalid', 'true');
-      passwordInput.setAttribute('aria-describedby', 'errorMessage');
       const passwordWrapper = passwordInput.closest('.input-icon-wrapper');
       if (passwordWrapper) {
         passwordWrapper.classList.add('is-invalid');
@@ -198,8 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Quitar clase de error de los inputs
     if (emailInput) {
       emailInput.classList.remove('is-invalid');
-      emailInput.setAttribute('aria-invalid', 'false');
-      emailInput.removeAttribute('aria-describedby');
       const emailWrapper = emailInput.closest('.input-icon-wrapper');
       if (emailWrapper) {
         emailWrapper.classList.remove('is-invalid');
@@ -208,8 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     if (passwordInput) {
       passwordInput.classList.remove('is-invalid');
-      passwordInput.setAttribute('aria-invalid', 'false');
-      passwordInput.removeAttribute('aria-describedby');
       const passwordWrapper = passwordInput.closest('.input-icon-wrapper');
       if (passwordWrapper) {
         passwordWrapper.classList.remove('is-invalid');
